@@ -1,6 +1,7 @@
-### CaMP DRought code calculations
+### CaMP DRought code calculations for annual GCBM runs
+### Dan Thompson, CFS, daniel.thompson@nrcan-rncan.gc.ca
+### Updated 2023-02-17
 
-### here's the 2019 era TPS of point stations:
 library(ncdf4) # package for netcdf manipulation
 library(raster) # package for raster manipulation
 library(rgdal) # package for geospatial analysis
@@ -9,61 +10,65 @@ library(sf)
 library(terra)
 
   
-  
-  setwd("E:/GIS_scratch/ECMWF-DC")
+  # Data source: https://doi.org/10.24381/cds.0e89c522 
+  # direct ECMWF fire weather historical grid product, for use from 2012 onwards.  Superceding older CWFIS gridded product.
+  # the two products are comparable in terms of capturing regional drought extent.
+  # prior data source was NARR FWI from https://www.publish.csiro.au/wf/WF17008 
+
+  #local storage location of downloaded daily .nc files from ECMWF
+  setwd("E:/GIS_scratch/ECMWF-DC") 
 
   #### new approach:
   ## 1. Read the netcdfs from ECMWF of daily DC using the following string scheme:
   ## ECMWF_FWI_DC_19930401_1200_hr_v4.0_con
   
-  DC.example <- rast("~/CaMP-Calcs/DC_annualMax_template.tif")
+  DC.example <- rast("~/CaMP-Calcs/DC_annualMax_template.tif") # example file containing NACID projection and gridding system for GCBM
   crs(DC.example)
-  DC.ext <- ext(-360, 0, -90, 90)
+  
+  DC.ext <- ext(-360, 0, -90, 90) #note that ECMWF .nc files start at the Prime Meridian as their xmin, so for Canada-only analysis, shifting over and cropping to maintain negative longitude over Canada
   DC.crop <- ext(-150,-45,40,80)
   
   ##also need 1993
-  for (year in 1993:1993) {
+  for (year in 2013:2021) {
     setwd("E:/GIS_scratch/ECMWF-DC")
     ## GOAL: read the daily .nc file, then stack all of them and read the max value from the entire stack of nc for a given year.
    
     pattern1 <- c(year)
     #(1)make a list of all files with *year* in the directory, via https://stackoverflow.com/a/59307366
     
-    ##open a single file
+    #create a list of all applicable files with the year in the file name. !! will capture ALL files, not just .nc!!!
     DC.files <- list.files("E:/GIS_scratch/ECMWF-DC", pattern=paste0(pattern1, collapse="|"), full.names=TRUE)
     
-    DC1 <- rast(DC.files[1])
-    ext(DC1) <- DC.ext
+    DC1 <- rast(DC.files[1]) #use terra to rasterize
+    ext(DC1) <- DC.ext#reproject, but keep global extent
     #DC1new <- crop(DC1,DC.ext)
     
-    DCBrick <- c(DC1,warn=FALSE)
+    DCBrick <- c(DC1,warn=FALSE) #make this into a Brick
     
     
     for (i in 2:length(DC.files)){
     #(2)make into a stack
     ###open each raster:
-    rasterNC <- rast(DC.files[i])
-    ext(rasterNC) <- DC.ext
+    rasterNC <- rast(DC.files[i]) #take each next .nc and rasterize it
+    ext(rasterNC) <- DC.ext #reproject
   
     
-    #then write it to a brick
+    #then write it to the ongoing brick
     DCBrick <- c(DCBrick,rasterNC)
     }
     
     #(3) grab the per-pixel max value from the stack of nc files
-    
-    #maxAnnual <- calc(DCBrick, function(x) max(x, na.rm = TRUE)) #since there's NAs
-    
     maxAnnual <- max(DCBrick)
-    maxAnnual <- crop(maxAnnual,DC.crop)
-    crs(maxAnnual) <- "epsg:4326"
-    maxAnnual <- terra::project(maxAnnual, DC.example)
     
-    ## and then reproject to the grid of the example tif:
+    maxAnnual <- crop(maxAnnual,DC.crop) #then crop to Area of Interest
+    
+    crs(maxAnnual) <- "epsg:4326" #define crs as geographic
+    maxAnnual <- terra::project(maxAnnual, DC.example) #then reproject just the final maxAnnual grid to the NACID projection and smaller pixel size.
+    
     
     outName <- paste0("DCmax",year,".tif")
     setwd("E:/GIS_scratch/ECMWF-DC/out/")
-    writeRaster(maxAnnual,filename = outName,overwrite = TRUE)
+    writeRaster(maxAnnual,filename = outName,overwrite = TRUE) #make unique file and output 1 TIFF per year
     }
   plot(maxAnnual)
   
