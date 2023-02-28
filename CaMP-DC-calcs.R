@@ -29,7 +29,7 @@ library(terra)
   DC.crop <- ext(-150,-45,40,80)
   
   ##also need 1993
-  for (year in 2013:2021) {
+  for (year in 1990:2011) {
     setwd("E:/GIS_scratch/ECMWF-DC")
     ## GOAL: read the daily .nc file, then stack all of them and read the max value from the entire stack of nc for a given year.
    
@@ -70,5 +70,22 @@ library(terra)
     setwd("E:/GIS_scratch/ECMWF-DC/out/")
     writeRaster(maxAnnual,filename = outName,overwrite = TRUE) #make unique file and output 1 TIFF per year
     }
-  plot(maxAnnual)
+  #plot(maxAnnual)
+  
+  
+  
+  
+  #### update 2023-02-17: make a 1990-2019 
+  
+  #make stack of all the maxAnnual rasters:
+  setwd("E:/GIS_scratch/ECMWF-DC/out/")
+  DCMax.files <- list.files("E:/GIS_scratch/ECMWF-DC/out/",pattern=paste0("DCmax",collapse="|"), full.names=TRUE)
+  
+  MaxDCStack <- rast(DCMax.files) # that was handy to throw just a giant list of tiff files as terra::rast :)
+  
+  # then compute the per-pixel 80th percentile:
+  
+  DroughtCode80thPercentile_For_Forward <- quantile(MaxDCStack, probs=seq(0.80))
+  
+  writeRaster(DroughtCode80thPercentile_For_Forward,filename = "DroughtCode80thPercentile_For_Forward.tif",overwrite = TRUE) 
   
