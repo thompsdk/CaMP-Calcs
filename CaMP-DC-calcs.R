@@ -22,6 +22,19 @@ library(terra)
   ## 1. Read the netcdfs from ECMWF of daily DC using the following string scheme:
   ## ECMWF_FWI_DC_19930401_1200_hr_v4.0_con
   
+  
+  ###load the centroids of all the Parks Locations:
+  
+  ParksCentroids <- read.csv("E:/GIS_scratch/ECMWF-DC/ParksExtents/ParksCentroids.csv") #the centroid long/lat of the parks of interest (not doing zonal stats for now)
+  
+  ParksCentroids <- as.data.frame(ParksCentroids)
+  
+  ParksCentroids.SpatVector <- vect(ParksCentroids,geom=c("X","Y"),crs="epsg:4326",keepgeom=TRUE)
+  
+  
+  ParksMaxDC <- array(data=NA,dim=c(1,3))
+  colnames(ParksMaxDC) <- c("ID","MaxDC","Year")
+  
   DC.example <- rast("~/CaMP-Calcs/DC_annualMax_template.tif") # example file containing NACID projection and gridding system for GCBM
   crs(DC.example)
   
@@ -29,7 +42,7 @@ library(terra)
   DC.crop <- ext(-150,-45,40,80)
   
   ##also need 1993
-  for (year in 1990:2011) {
+  for (year in 2021:2022) {
     setwd("E:/GIS_scratch/ECMWF-DC")
     ## GOAL: read the daily .nc file, then stack all of them and read the max value from the entire stack of nc for a given year.
    
@@ -52,6 +65,7 @@ library(terra)
     rasterNC <- rast(DC.files[i]) #take each next .nc and rasterize it
     ext(rasterNC) <- DC.ext #reproject
   
+
     
     #then write it to the ongoing brick
     DCBrick <- c(DCBrick,rasterNC)
@@ -63,6 +77,9 @@ library(terra)
     maxAnnual <- crop(maxAnnual,DC.crop) #then crop to Area of Interest
     
     crs(maxAnnual) <- "epsg:4326" #define crs as geographic
+    
+    ##now that it is cropped and reprojected, extract point locations of maxAnnual for each park and add it alongside the year to the dataframe:
+    
     maxAnnual <- terra::project(maxAnnual, DC.example) #then reproject just the final maxAnnual grid to the NACID projection and smaller pixel size.
     
     
@@ -88,4 +105,18 @@ library(terra)
   DroughtCode80thPercentile_For_Forward <- quantile(MaxDCStack, probs=seq(0.80))
   
   writeRaster(DroughtCode80thPercentile_For_Forward,filename = "DroughtCode80thPercentile_For_Forward.tif",overwrite = TRUE) 
+  
+  
+  
+  ###2023-02-28 Parks Canada subset
+  
+  ### 1) create a SpatVector object with a list of long/lat centroids for each park
+  
+  ### 2) loop through the file list and grab the max annual DC for each park for each year (do this in the loop above)
+  ParksCentroids.SpatVector.NACID <- terra::project(ParksCentroids.SpatVector, MaxDCStack)
+  ParksDCMaxPerYear <- extract(MaxDCStack,ParksCentroids.SpatVector.NACID,method="simple")
+  write.csv(ParksDCMaxPerYear,"ParksDCMaxPerYear.csv")
+  
+  ### 3) do the same for the spinup DC as well
+  
   
