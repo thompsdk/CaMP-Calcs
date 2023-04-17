@@ -1,0 +1,330 @@
+ID,X,Y,YEAR,SITE,UID,NUTRIENTS,PRIM_CLASS,SEC_CLASS,PROV,Ecozone,LATN,LONGW,ECPROV,ECREGION,WETREGION,PEATDEPTH,WTDEPTH,WETTYPE,CWFIS_date,YEAR,MONTH,DAY,SampleDate,Card_Date_Notes,stackID,out_dc,dc_class,ECOPROV
+125,-404808.4068,675883.4255,1982,34,1982-34,,basin_bog,treed_conif,MB,,54.95,-101.45,BO,HBs,BHc,218,-32,bog,dc820715,82,07,15,1982-07-15,,468,256,2,Western Boreal Shield
+256,-448197.2181,644251.5966,1984,8,Aug-84,,basin_bog,treed_conif,SK,,54.62,-102.08,BO,HBs,BHc,374,-35,bog,dc840610,84,06,10,1984-06-10,,795,98,0,Western Boreal Shield
+264,-465193.9102,673692.9416,1984,16,1984-16,,northern plateau,treed_conif,SK,,54.87,-102.4,BO,HBs,BHc,166,-48,bog,dc840614,84,06,14,1984-06-14,,799,124,1,Western Boreal Shield
+158,-230284.6352,645562.9192,1982,60,1982-60,1,basin_bog,shrub,MB,,54.8,-98.65,BO,HBs,BHc,244,-50,bog,dc820807,82,08,07,1982-08-07,,491,255,2,Western Boreal Shield
+120,-416097.7989,646288.471,1982,29,1982-29,1,basin_bog,treed_conif,MB,,54.67,-101.58,BO,HBs,BHc,317,-20,bog,dc820713,82,07,13,1982-07-13,,466,233,2,Western Boreal Shield
+124,-408017.9619,663033.4489,1982,32,1982-32,1,basin_bog,treed_conif,MB,,54.83,-101.48,BO,HBs,BHc,146,-38,bog,dc820715,82,07,15,1982-07-15,,468,247,2,Western Boreal Shield
+159,-251762.188,635904.9715,1982,61,1982-61,1,basin_bog,treed_conif,MB,,54.7,-98.98,BO,HBs,BHc,247,-35,bog,dc820808,82,08,08,1982-08-08,,492,269,2,Western Boreal Shield
+162,-234878.0014,653490.6704,1982,64,1982-64,1,basin_bog,treed_conif,MB,,54.87,-98.73,BO,HBs,BHc,123,-60,bog,dc820810,82,08,10,1982-08-10,,494,269,2,Western Boreal Shield
+257,-443163.0811,672279.2118,1984,9,Sep-84,1,basin_bog,treed_conif,SK,,54.88,-102.05,BO,HBs,BHc,421,-21,bog,dc840611,84,06,11,1984-06-11,,796,107,1,Western Boreal Shield
+258,-489499.1355,672205.6205,1984,10,Oct-84,1,basin_bog,treed_conif,SK,,54.83,-102.78,BO,HBs,BHc,270,-21,bog,dc840611,84,06,11,1984-06-11,,796,109,1,Western Boreal Shield
+265,-431579.9224,662215.5054,1984,17,1984-17,1,basin_bog,treed_conif,SK,,54.8,-101.85,BO,HBs,BHc,395,-21,bog,dc840615,84,06,15,1984-06-15,,800,130,1,Western Boreal Shield
+267,-436803.4696,655088.7582,1984,19,1984-19,1,basin_bog,treed_conif,SK,,54.73,-101.92,BO,HBs,BHc,124,-18,bog,dc840615,84,06,15,1984-06-15,,800,131,1,Western Boreal Shield
+299,-603962.4198,765271.4099,1984,44,1984-44,1,basin_bog,treed_conif,SK,,55.53,-104.8,BO,HBs,BHc,566,-39,bog,dc840717,84,07,17,1984-07-17,,832,252,2,Western Boreal Shield
+310,-614687.7689,744860.5789,1984,54,1984-54,1,basin_bog,treed_conif,SK,,55.33,-104.92,BO,HBs,BHc,375,-31,bog,dc840722,84,07,22,1984-07-22,,837,227,2,Western Boreal Shield
+161,-220530.1829,650485.7754,1982,63,1982-63,2,palsa,collapse scar_bog,MB,,54.85,-98.5,BO,HBs,BHc,280,-17,bog,dc820809,82,08,09,1982-08-09,,493,246,2,Western Boreal Shield
+122,-405837.4744,678184.146,1982,31,1982-31,4,palsa,collapse scar_bog,MB,,54.97,-101.47,BO,HBs,BHc,184,-5,bog,dc820714,82,07,14,1982-07-14,,467,249,2,Western Boreal Shield
+135,-407417.2025,637705.688,1982,40,1982-40,4,palsa,collapse scar_bog,MB,,54.6,-101.43,BO,HBs,BMc,221,0,bog,dc820719,82,07,19,1982-07-19,,472,278,2,Western Boreal Shield
+148,-275655.1233,629804.1719,1982,50,1982-50,4,palsa,collapse scar_bog,MB,,54.63,-99.35,BO,HBs,BHc,127,-8,bog,dc820802,82,08,02,1982-08-02,,486,321,3,Western Boreal Shield
+160,-220530.1829,650485.7754,1982,63,1982-63,4,palsa,collapse scar_bog,MB,,54.85,-98.5,BO,HBs,BHc,361,-14,bog,dc820809,82,08,09,1982-08-09,,493,246,2,Western Boreal Shield
+210,-31687.43299,175327.1704,1983,29,1983-29,1,basin_bog,treed_conif,MB,,50.58,-95.45,BO,MBs,BMc,597,-65,bog,dc830715,83,07,15,1983-07-15,,649,274,2,Mid-Boreal Shield
+211,-33136.60094,169807.4185,1983,30,1983-30,1,basin_bog,treed_conif,MB,,50.53,-95.47,BO,MBs,BMc,476,-32,bog,dc830715,83,07,15,1983-07-15,,649,270,2,Mid-Boreal Shield
+208,-85706.77212,111816.8722,1983,28,1983-28,,domed,treed_conif,MB,,50,-96.2,BO,LBs,BMc,305,-43,bog,dc830714,83,07,14,1983-07-14,,648,237,2,Lake of the Woods
+212,-46052.97564,147790.6418,1983,31,1983-31,1,basin_bog,centre,MB,,50.33,-95.65,BO,LBst,BL,195,-61,bog,dc830716,83,07,16,1983-07-16,,650,265,2,Lake of the Woods
+178,-45140.70102,96823.17846,1983,10,Oct-83,1,basin_bog,treed_conif,MB,,49.87,-95.63,BO,LBst,BL,292,-31,bog,dc830622,83,06,22,1983-06-22,,626,139,1,Lake of the Woods
+203,-43938.31173,146662.5981,1983,25,1983-25,1,basin_bog,treed_conif,MB,,50.32,-95.62,BO,LBst,BL,130,-42,bog,dc830712,83,07,12,1983-07-12,,646,226,2,Lake of the Woods
+204,-40414.83758,144415.6742,1983,26,1983-26,1,basin_bog,treed_conif,MB,,50.3,-95.57,BO,LBst,BL,264,-43,bog,dc830712,83,07,12,1983-07-12,,646,230,2,Lake of the Woods
+220,-103887.3776,159822.5515,1983,36,1983-36,1,basin_bog,treed_conif,MB,,50.43,-96.47,BO,LBs,BMc,261,-39,bog,dc830719,83,07,19,1983-07-19,,653,298,2,Lake of the Woods
+180,-26814.83722,44529.24484,1983,12,Dec-83,1,domed,centre,MB,,49.4,-95.37,BO,LBst,BL,335,-6,bog,dc830623,83,06,23,1983-06-23,,627,143,1,Lake of the Woods
+182,-26814.83722,44529.24484,1983,12,Dec-83,1,domed,margin,MB,,49.4,-95.37,BO,LBst,BL,370,-28,bog,dc830623,83,06,23,1983-06-23,,627,143,1,Lake of the Woods
+171,-28968.03661,47873.57567,1983,5,May-83,1,domed,shrub,MB,,49.43,-95.4,BO,LBst,BL,146,-22,bog,dc830618,83,06,18,1983-06-18,,622,167,1,Lake of the Woods
+201,-81975.8074,120613.1372,1983,23,1983-23,1,domed,shrub,MB,,50.08,-96.15,BO,LBs,BMc,137,-70,bog,dc830711,83,07,11,1983-07-11,,645,215,2,Lake of the Woods
+170,-28968.03661,47873.57567,1983,5,May-83,1,domed,treed_conif,MB,,49.43,-95.4,BO,LBst,BL,215,-21,bog,dc830618,83,06,18,1983-06-18,,622,167,1,Lake of the Woods
+172,-28968.03661,47873.57567,1983,5,May-83,1,domed,treed_conif,MB,,49.43,-95.4,BO,LBst,BL,222,-60,bog,dc830618,83,06,18,1983-06-18,,622,167,1,Lake of the Woods
+200,-81975.8074,120613.1372,1983,23,1983-23,1,domed,treed_conif,MB,,50.08,-96.15,BO,LBs,BMc,202,-48,bog,dc830711,83,07,11,1983-07-11,,645,215,2,Lake of the Woods
+209,-85706.77212,111816.8722,1983,28,1983-28,1,domed,treed_conif,MB,,50,-96.2,BO,LBs,BMc,233,-65,bog,dc830714,83,07,14,1983-07-14,,648,237,2,Lake of the Woods
+169,-36349.60393,30154.58543,1983,4,Apr-83,1,flat,treed_conif,MB,,49.27,-95.5,BO,LBst,BL,212,-25,bog,dc830617,83,06,17,1983-06-17,,621,169,1,Lake of the Woods
+202,-64124.98636,122541.2707,1983,24,1983-24,1,flat,treed_conif,MB,,50.1,-95.9,BO,LBst,BL,230,-50,bog,dc830711,83,07,11,1983-07-11,,645,216,2,Lake of the Woods
+195,-39217.04761,118933.7842,1983,19,1983-19,1,northern plateau,treed_conif,MB,,50.07,-95.55,BO,LBst,BL,245,-34,bog,dc830628,83,06,28,1983-06-28,,632,176,1,Lake of the Woods
+179,-21521.98998,91106.80728,1983,11,Nov-83,3,basin_bog,treed_conif,MB,,49.82,-95.3,BO,MBs,BL,505,-18,bog,dc830622,83,06,22,1983-06-22,,626,137,1,Lake of the Woods
+213,-46052.97564,147790.6418,1983,31,1983-31,6,basin_bog,margin,MB,,50.33,-95.65,BO,LBst,BL,165,-66,bog,dc830716,83,07,16,1983-07-16,,650,265,2,Lake of the Woods
+226,-72884.72703,153679.2864,1983,41,1983-41,6,basin_bog,treed_conif,MB,,50.38,-96.03,BO,LBst,BMc,121,-39,bog,dc830721,83,07,21,1983-07-21,,655,315,3,Lake of the Woods
+28,-1339031.122,1143981.008,1981,13,1981-13,,basin_bog,treed_conif,AB,,57.17,-118.18,CD,SCb,BMc,56,-30,bog,dc810623,81,06,23,1981-06-23,,265,271,2,Boreal Foothills
+37,-1245206.119,851858.3059,1981,19,1981-19,1,basin_bog,open,AB,,54.93,-115.13,CD,SCb,BHc,144,-3,bog,dc810628,81,06,28,1981-06-28,,270,229,2,Boreal Foothills
+38,-1245206.119,851858.3059,1981,19,1981-19,1,basin_bog,open,AB,,54.93,-115.13,CD,SCb,BHc,152,-14,bog,dc810628,81,06,28,1981-06-28,,270,229,2,Boreal Foothills
+7,-1320799.138,592984.9113,1981,3,Mar-81,1,northern plateau,margin,AB,,52.47,-115,CD,SCb,BMc,418,-12,bog,dc810604,81,06,04,1981-06-04,,246,128,1,Boreal Foothills
+29,-1304569.794,1007096.116,1981,14,1981-14,,basin_bog,treed_conif,AB,,56.1,-116.85,BO,LBs,BMc,235,-45,bog,dc810624,81,06,24,1981-06-24,,266,283,2,Central Boreal Plains
+60,-1214312.582,985239.2631,1981,38,1981-38,,basin_bog,treed_conif,AB,,56.18,-115.33,BO,MBs,BHc,201,-31,bog,dc810721,81,07,21,1981-07-21,,293,379,3,Central Boreal Plains
+75,-1268084.307,953900.9922,1981,48,1981-48,,basin_bog,treed_conif,AB,,55.75,-116,BO,MBs,BMc,204,-27,bog,dc810729,81,07,29,1981-07-29,,301,346,3,Central Boreal Plains
+241,-424300.4783,404734.5306,1983,53,1983-53,,basin_bog,treed_conif,MB,,52.47,-101.33,BO,MBs,BMt,330,-45,bog,dc830813,83,08,13,1983-08-13,,678,236,2,Central Boreal Plains
+245,-412948.214,304081.0496,1983,57,1983-57,,basin_bog,treed_conif,MB,,51.57,-101.02,BO,MBs,BMc,270,-61,bog,dc830815,83,08,15,1983-08-15,,680,323,3,Central Boreal Plains
+290,-705399.1139,604770.9946,1984,38,1984-38,,basin_bog,treed_conif,SK,,53.93,-105.97,BO,MBs,BMc,55,-33,bog,dc840628,84,06,28,1984-06-28,,813,186,1,Central Boreal Plains
+53,-1034689.764,799437.1562,1981,32,1981-32,,flat,treed_hardw,AB,,55.02,-111.68,BO,MBs,BHc,251,-39,bog,dc810711,81,07,11,1981-07-11,,283,343,3,Central Boreal Plains
+56,-1074786.604,765061.9564,1981,34,1981-34,,peat plateau,mound,AB,,54.62,-112.15,BO,LBs,BMc,246,-66,bog,dc810712,81,07,12,1981-07-12,and 11 jul 1981 for Ok type at white birch grass swamp,284,323,3,Central Boreal Plains
+51,-1056723.855,799756.4855,1981,30,1981-30,1,basin_bog,shrub,AB,,54.97,-112.02,BO,MBs,BMc,331,-33,bog,dc810710,81,07,10,1981-07-10,,282,323,3,Central Boreal Plains
+59,-1119607.145,758384.0673,1981,37,1981-37,1,basin_bog,treed_conif,AB,,54.45,-112.8,BO,LBs,BMc,219,-43,bog,dc810714,81,07,14,1981-07-14,,286,291,2,Central Boreal Plains
+243,-416306.917,410571.4628,1983,55,1983-55,1,basin_bog,treed_conif,MB,,52.53,-101.22,BO,MBs,BMt,304,-52,bog,dc830814,83,08,14,1983-08-14,,679,244,2,Central Boreal Plains
+251,-511704.6102,403296.2471,1984,3,Mar-84,1,basin_bog,treed_conif,SK,,52.37,-102.62,BO,MBs,BMt,207,-31,bog,dc840608,84,06,08,1984-06-08,,793,109,1,Central Boreal Plains
+274,-625391.9018,555072.3432,1984,25,1984-25,1,basin_bog,treed_conif,SK,,53.6,-104.63,BO,LBs,BMc,152,-42,bog,dc840620,84,06,20,1984-06-20,,805,134,1,Central Boreal Plains
+284,-691238.4729,660067.2807,1984,33,1984-33,1,basin_bog,treed_conif,SK,,54.45,-105.9,BO,MBs,BMc,221,-22,bog,dc840625,84,06,25,1984-06-25,,810,156,1,Central Boreal Plains
+304,-618064.5395,686808.3577,1984,48,1984-48,1,basin_bog,treed_conif,SK,,54.8,-104.83,BO,MBs,BHc,156,-29,bog,dc840719,84,07,19,1984-07-19,,834,259,2,Central Boreal Plains
+311,-642332.8595,710586.9716,1984,55,1984-55,1,basin_bog,treed_conif,SK,,54.98,-105.27,BO,HBs,BHc,184,-26,bog,dc840723,84,07,23,1984-07-23,,838,233,2,Central Boreal Plains
+312,-817294.1838,663843.7745,1984,56,1984-56,1,basin_bog,treed_conif,SK,,54.27,-107.85,BO,LBs,BMc,220,-34,bog,dc840802,84,08,02,1984-08-02,,848,356,3,Central Boreal Plains
+319,-807092.985,704173.126,1984,62,1984-62,1,basin_bog,treed_conif,SK,,54.65,-107.82,BO,LBs,BMc,165,-45,bog,dc840806,84,08,06,1984-08-06,,852,429,4,Central Boreal Plains
+322,-842500.02,837804.836,1984,65,1984-65,1,basin_bog,treed_conif,SK,,55.78,-108.82,BO,MBs,BHc,160,-30,bog,dc840808,84,08,08,1984-08-08,,854,405,4,Central Boreal Plains
+327,-819370.5875,837232.3477,1984,70,1984-70,1,basin_bog,treed_conif,SK,,55.82,-108.45,BO,HBs,BHc,225,-50,bog,dc840811,84,08,11,1984-08-11,,857,419,4,Central Boreal Plains
+328,-820341.5818,838555.9915,1984,71,1984-71,1,basin_bog,treed_conif,SK,,55.83,-108.47,BO,HBs,BHc,150,-35,bog,dc840811,84,08,11,1984-08-11,,857,419,4,Central Boreal Plains
+44,-1045763.035,881636.5729,1981,24,1981-24,1,flat,treed_conif,AB,,55.72,-112.2,BO,MBs,BHc,297,-19,bog,dc810708,81,07,08,1981-07-08,,280,333,3,Central Boreal Plains
+76,-1215127.682,947645.6411,1981,49,1981-49,1,flat,treed_conif,AB,,55.85,-115.15,BO,MBs,BHc,406,-40,bog,dc810730,81,07,30,1981-07-30,,302,311,3,Central Boreal Plains
+317,-768337.1623,670837.9547,1984,60,1984-60,1,flat,treed_conif,SK,,54.42,-107.12,BO,LBs,BMc,109,-55,bog,dc840804,84,08,04,1984-08-04,,850,412,4,Central Boreal Plains
+315,-805998.9423,709527.4917,1984,58,1984-58,1,northern plateau,northern plateau,SK,,54.7,-107.82,BO,LBs,BMc,360,-42,bog,dc840803,84,08,03,1984-08-03,,849,412,4,Central Boreal Plains
+47,-1216230.78,888359.9405,1981,26,1981-26,1,northern plateau,treed_conif,AB,,55.33,-114.87,BO,LBs,BMc,311,-28,bog,dc810709,81,07,09,1981-07-09,,281,274,2,Central Boreal Plains
+77,-1204383.743,884554.307,1981,50,1981-50,1,northern plateau,treed_conif,AB,,55.33,-114.67,BO,LBs,BMc,286,-22,bog,dc810730,81,07,30,1981-07-30,,302,270,2,Central Boreal Plains
+249,-508700.4775,456067.0721,1984,1,Jan-84,1,northern plateau,treed_conif,SK,,52.85,-102.67,BO,LBs,BMt,280,-33,bog,dc840606,84,06,06,1984-06-06,,791,149,1,Central Boreal Plains
+301,-659384.4538,684603.9488,1984,46,1984-46,1,northern plateau,treed_conif,SK,,54.72,-105.47,BO,MBs,BHc,382,-34,bog,dc840718,84,07,18,1984-07-18,also 23 jul 1984 on another card,833,260,2,Central Boreal Plains
+306,-662572.4323,696213.972,1984,51,1984-51,1,northern plateau,treed_conif,SK,,54.82,-105.55,BO,MBs,BHc,532,-37,bog,dc840720,84,07,20,1984-07-20,also 23 jul 1984 on another card,835,254,2,Central Boreal Plains
+308,-662933.2358,694058.6661,1984,52,1984-52,1,northern plateau,treed_conif,SK,,54.8,-105.55,BO,MBs,BHc,452,-35,bog,dc840721,84,07,21,1984-07-21,,836,238,2,Central Boreal Plains
+321,-799819.424,786298.49,1984,64,1984-64,1,northern plateau,treed_conif,SK,,55.4,-107.97,BO,MBs,BHc,278,-35,bog,dc840807,84,08,07,1984-08-07,,853,415,4,Central Boreal Plains
+331,-806399.8779,757565.1759,1984,74,1984-74,1,northern plateau,treed_conif,SK,,55.13,-107.98,BO,LBs,BHc,226,-40,bog,dc840813,84,08,13,1984-08-13,,859,438,4,Central Boreal Plains
+49,-1051994.905,807520.3318,1981,28,1981-28,1,shore,treed_conif,AB,,55.05,-111.98,BO,MBs,BMc,198,-43,bog,dc810710,81,07,10,1981-07-10,,282,328,3,Central Boreal Plains
+307,-681632.5883,678382.8338,1984,50,1984-50,2,northern plateau,treed_conif,SK,,54.63,-105.8,BO,MBs,BHc,383,-42,bog,dc840720,84,07,20,1984-07-20,,835,279,2,Central Boreal Plains
+55,-1074786.604,765061.9564,1981,34,1981-34,4,peat plateau,collapse scar_bog,AB,,54.62,-112.15,BO,LBs,BMc,285,-5,bog,dc810712,81,07,12,1981-07-12,and 11 jul 1981 for Ok type at white birch grass swamp,284,323,3,Central Boreal Plains
+50,-1055511.839,799424.405,1981,29,1981-29,6,basin_bog,treed_conif,AB,,54.97,-112,BO,MBs,BMc,517,-20,bog,dc810710,81,07,10,1981-07-10,,282,323,3,Central Boreal Plains
+61,-1214312.582,985239.2631,1981,38,1981-38,6,basin_bog,treed_conif,AB,,56.18,-115.33,BO,MBs,BHc,434,-36,bog,dc810721,81,07,21,1981-07-21,,293,379,3,Central Boreal Plains
+72,-1198387.36,884933.9693,1981,46,1981-46,6,flat,treed_conif,AB,,55.35,-114.58,BO,LBs,BMc,261,-28,bog,dc810728,81,07,28,1981-07-28,,300,258,2,Central Boreal Plains
+137,-432598.7026,605143.0205,1982,42,1982-42,,flat,treed_conif,MB,,54.28,-101.77,BO,MBs,BMc,74,-46,bog,dc820721,82,07,21,1982-07-21,,474,301,3,Eastern Boreal Plains
+103,-408299.8795,629003.9318,1982,17,1982-17,,palsa,palsa,MB,,54.52,-101.43,BO,HBs,BMc,374,-25,bog,dc820625,82,06,25,1982-06-25,,448,177,1,Eastern Boreal Plains
+133,-408299.8795,629003.9318,1982,18,1982-18,,palsa,palsa,MB,,54.52,-101.43,BO,HBs,BMc,289,-15,bog,dc820719,82,07,19,1982-07-19,,472,289,2,Eastern Boreal Plains
+131,-427454.7652,623295.5049,1982,38,1982-38,1,basin_bog,treed_conif,MB,,54.45,-101.72,BO,MBs,BMc,257,-36,bog,dc820717,82,07,17,1982-07-17,,470,276,2,Eastern Boreal Plains
+144,-303347.2471,625218.9844,1982,47,1982-47,1,basin_bog,treed_conif,MB,,54.57,-99.78,BO,HBs,BHc,100,-30,bog,dc820801,82,08,01,1982-08-01,,485,345,3,Eastern Boreal Plains
+154,-265566.5944,589671.658,1982,57,1982-57,1,basin_bog,treed_conif,MB,,54.27,-99.15,BO,HBs,BHc,259,-49,bog,dc820806,82,08,06,1982-08-06,,490,270,2,Eastern Boreal Plains
+227,-135462.9051,236958.4443,1983,42,1983-42,1,basin_bog,treed_conif,MB,,51.12,-96.95,BO,MBs,BMc,156,-22,bog,dc830806,83,08,06,1983-08-06,,671,422,4,Eastern Boreal Plains
+234,-128711.064,300755.2281,1983,47,1983-47,1,basin_bog,treed_conif,MB,,51.7,-96.88,BO,MBs,BMc,341,-53,bog,dc830808,83,08,08,1983-08-08,,673,432,4,Eastern Boreal Plains
+189,-108175.8163,67928.30989,1983,15,1983-15,1,domed,centre,MB,,49.6,-96.5,BO,LBs,BMt,280,-56,bog,dc830625,83,06,25,1983-06-25,also 27 jun 1983 on another card,629,133,1,Eastern Boreal Plains
+233,-129623.2936,269900.7029,1983,46,1983-46,1,flat,treed_conif,MB,,51.42,-96.88,BO,MBs,BMc,469,-73,bog,dc830808,83,08,08,1983-08-08,,673,441,4,Eastern Boreal Plains
+100,-397074.0258,457277.1255,1982,15,1982-15,1,northern plateau,treed_conif,MB,,52.97,-101,BO,MBs,BMc,231,-51,bog,dc820623,82,06,23,1982-06-23,,446,204,2,Eastern Boreal Plains
+232,-139074.0189,232652.3261,1983,45,1983-45,1,northern plateau,treed_conif,MB,,51.08,-97,BO,LBs,BMc,159,-70,bog,dc830807,83,08,07,1983-08-07,,672,428,4,Eastern Boreal Plains
+96,-415459.5807,506469.8662,1982,4,Apr-82,2,northern plateau,treed_conif,MB,,53.4,-101.35,BO,MBs,BMc,120,-34,bog,dc820623,82,06,23,1982-06-23,,446,210,2,Eastern Boreal Plains
+187,-108175.8163,67928.30989,1983,15,1983-15,3,domed,margin,MB,,49.6,-96.5,BO,LBs,BMt,255,-10,bog,dc830625,83,06,25,1983-06-25,also 27 jun 1983 on another card,629,133,1,Eastern Boreal Plains
+102,-408299.8795,629003.9318,1982,17,1982-17,4,palsa,collapse scar_bog,MB,,54.52,-101.43,BO,HBs,BMc,81,-16,bog,dc820625,82,06,25,1982-06-25,,448,177,1,Eastern Boreal Plains
+134,-408299.8795,629003.9318,1982,18,1982-18,4,palsa,collapse scar_bog,MB,,54.52,-101.43,BO,HBs,BMc,224,-18,bog,dc820719,82,07,19,1982-07-19,,472,289,2,Eastern Boreal Plains
+139,-404326.8409,617612.6273,1982,44,1982-44,4,palsa,collapse scar_bog,MB,,54.42,-101.35,BO,HBs,BHc,133,-40,bog,dc820722,82,07,22,1982-07-22,,475,310,3,Eastern Boreal Plains
+147,-287431.5852,625148.3102,1982,49,1982-49,4,palsa,collapse scar_bog,MB,,54.58,-99.53,BO,HBs,BHc,167,-29,bog,dc820801,82,08,01,1982-08-01,,485,337,3,Eastern Boreal Plains
+219,-85752.81688,220251.9392,1983,35,1983-35,6,basin swamp,treed_conif,MB,,50.98,-96.23,BO,LBst,BMc,122,-39,conifer swamp,dc830718,83,07,18,1983-07-18,,652,319,3,Mid-Boreal Shield
+221,-107367.4237,162117.8635,1983,37,1983-37,1,basin_bog,treed_conif,MB,,50.45,-96.52,BO,LBs,BMc,298,-23,conifer swamp,dc830719,83,07,19,1983-07-19,,653,296,2,Lake of the Woods
+197,-69061.43819,125937.2187,1983,21,1983-21,1,flat,treed_conif,MB,,50.13,-95.97,BO,LBst,BL,195,-43,conifer swamp,dc830629,83,06,29,1983-06-29,,633,194,1,Lake of the Woods
+166,-74542.87345,6157.677575,1983,2,Feb-83,1,northern plateau,treed_conif,MB,,49.05,-96.02,BO,LBs,BMc,169,-14,conifer swamp,dc830617,83,06,17,1983-06-17,,621,196,1,Lake of the Woods
+196,-67654.14066,124808.2159,1983,20,1983-20,6,flat,treed_conif,MB,,50.12,-95.95,BO,LBst,BL,115,-28,conifer swamp,dc830628,83,06,28,1983-06-28,,632,180,1,Lake of the Woods
+217,-95290.70221,165165.2557,1983,33,1983-33,6,hoizontal,treed_conif,MB,,50.48,-96.35,BO,LBst,BMc,191,-24,conifer swamp,dc830717,83,07,17,1983-07-17,,651,287,2,Lake of the Woods
+222,-107367.4237,162117.8635,1983,38,1983-38,6,basin swamp,treed_conif,MB,,50.45,-96.52,BO,LBs,BMc,250,-22,conifer swamp,dc830720,83,07,20,1983-07-20,,654,305,3,Lake of the Woods
+174,-37640.12222,50156.97475,1983,7,Jul-83,6,peat margin swamp,treed_conif,MB,,49.45,-95.52,BO,LBst,BL,47,-20,conifer swamp,dc830619,83,06,19,1983-06-19,,623,180,1,Lake of the Woods
+223,-92236.87999,141856.1184,1983,39,1983-39,6,stream swamp,treed_conif,MB,,50.27,-96.3,BO,LBs,BMc,68,-22,conifer swamp,dc830720,83,07,20,1983-07-20,,654,296,2,Lake of the Woods
+225,-90108.62281,141813.1165,1983,40,1983-40,6,stream swamp,treed_conif,MB,,50.27,-96.27,BO,LBs,BMc,130,-34,conifer swamp,dc830721,83,07,21,1983-07-21,,655,307,3,Lake of the Woods
+24,-1444800.092,735926.0117,1981,11,Nov-81,,peat margin swamp,treed_conif,AB,,53.33,-117.47,CD,SCb,BMc,290,-18,conifer swamp,dc810617,81,06,17,1981-06-17,,259,186,1,Boreal Foothills
+8,-1320799.138,592984.9113,1981,3,Mar-81,1,northern plateau,centre,AB,,52.47,-115,CD,SCb,BMc,348,-19,conifer swamp,dc810604,81,06,04,1981-06-04,,246,128,1,Boreal Foothills
+42,-1267479.734,798197.365,1981,22,1981-22,6,peat margin swamp,treed_conif,AB,,54.4,-115.2,CD,SCb,BHc,69,-30,conifer swamp,dc810630,81,06,30,1981-06-30,,272,209,2,Boreal Foothills
+74,-1213190.574,996342.4058,1981,47,1981-47,6,basin swamp,treed_conif,AB,,56.28,-115.37,BO,MBs,BHc,198,-50,conifer swamp,dc810729,81,07,29,1981-07-29,,301,384,3,Central Boreal Plains
+237,-348589.6095,210979.4895,1983,49,1983-49,6,peat margin swamp,treed_conif,MB,,50.78,-99.98,BO,MBs,BMc,157,-31,conifer swamp,dc830810,83,08,10,1983-08-10,,675,300,3,Central Boreal Plains
+58,-1153468.391,783104.8977,1981,36,1981-36,6,stream swamp,treed_conif,AB,,54.58,-113.42,BO,LBs,BMc,243,-20,conifer swamp,dc810713,81,07,13,1981-07-13,,285,305,3,Central Boreal Plains
+119,-281981.9273,440273.647,1982,28,1982-28,6,string fen,treed island,MB,,52.9,-99.25,BO,MBs,BMc,293,-65,conifer swamp,dc820701,82,07,01,1982-07-01,,454,258,2,Eastern Boreal Plains
+253,-488640.4851,455896.11,1984,5,May-84,6,peat margin swamp,treed_conif,SK,,52.87,-102.37,BO,LBs,BMt,71,-41,conifer swamp,dc840609,84,06,09,1984-06-09,,794,79,0,Eastern Boreal Plains
+116,-285145.988,442687.6469,1982,27,1982-27,6,shore swamp,treed_conif,MB,,52.92,-99.3,BO,MBs,BMc,245,-12,conifer swamp,dc820630,82,06,30,1982-06-30,,453,252,2,Eastern Boreal Plains
+218,-89038.24998,230257.4578,1983,34,1983-34,,basin swamp,treed_hardw,MB,,51.07,-96.28,BO,LBst,BMc,120,-4,hardwood swamp,dc830718,83,07,18,1983-07-18,,652,319,3,Mid-Boreal Shield
+193,-46290.59053,124539.5037,1983,18,1983-18,,basin swamp,treed_hardw,MB,,50.12,-95.65,BO,LBst,BL,62,-2,hardwood swamp,dc830628,83,06,28,1983-06-28,,632,182,1,Lake of the Woods
+173,-23956.29771,36739.10771,1983,6,Jun-83,,stream swamp,treed_hardw,MB,,49.33,-95.33,BO,LBst,BL,14,-11,hardwood swamp,dc830619,83,06,19,1983-06-19,,623,173,1,Lake of the Woods
+185,-21830.86773,25618.89073,1983,14,1983-14,,stream swamp,treed_hardw,MB,,49.23,-95.3,BO,LBst,BL,1,-32,hardwood swamp,dc830624,83,06,24,1983-06-24,,628,151,1,Lake of the Woods
+54,-1034689.764,799437.1562,1981,33,1981-33,,peat margin swamp,treed_conif,AB,,55.02,-111.68,BO,MBs,BHc,189,-20,hardwood swamp,dc810711,81,07,11,1981-07-11,,283,343,3,Central Boreal Plains
+57,-1070630.316,850075.2393,1981,35,1981-35,,stream swamp,treed_hardw,AB,,55.38,-112.45,BO,LBs,BMc,8,-14,hardwood swamp,dc810713,81,07,13,1981-07-13,,285,349,3,Central Boreal Plains
+123,-408017.9619,663033.4489,1982,32,1982-32,2,basin_fen,open,MB,,54.83,-101.48,BO,HBs,BHc,80,-9,open fen,dc820715,82,07,15,1982-07-15,,468,247,2,Western Boreal Shield
+309,-634516.1698,739184.1714,1984,53,1984-53,3,drainage,open,SK,,55.25,-105.22,BO,HBs,BHc,295,20,open fen,dc840722,84,07,22,1984-07-22,,837,221,2,Western Boreal Shield
+296,-642521.3317,732746.5183,1984,43,1984-43,3,string fen,flark,SK,,55.18,-105.33,BO,HBs,BHc,336,10,open fen,dc840716,84,07,16,1984-07-16,,831,221,2,Western Boreal Shield
+198,-90418.14271,126313.3141,1983,22,1983-22,,spring fen,open,MB,,50.13,-96.27,BO,LBs,BMc,145,1,open fen,dc830710,83,07,10,1983-07-10,,644,206,2,Lake of the Woods
+181,-26814.83722,44529.24484,1983,12,Dec-83,2,drainage,open,MB,,49.4,-95.37,BO,LBst,BL,346,-16,open fen,dc830623,83,06,23,1983-06-23,,627,143,1,Lake of the Woods
+183,-34037.35762,47908.24511,1983,13,1983-13,3,string fen,flark,MB,,49.43,-95.47,BO,LBst,BL,127,9,open fen,dc830624,83,06,24,1983-06-24,,628,152,1,Lake of the Woods
+164,-88878.54592,58633.4243,1983,1,Jan-83,4,basin_fen,open,MB,,49.52,-96.23,BO,LBs,BMc,220,-2,open fen,dc830615,83,06,15,1983-06-15,,619,182,1,Lake of the Woods
+207,-85706.77212,111816.8722,1983,28,1983-28,4,drainage,open,MB,,50,-96.2,BO,LBs,BMc,275,-1,open fen,dc830714,83,07,14,1983-07-14,,648,237,2,Lake of the Woods
+205,-89560.58232,97479.68315,1983,27,1983-27,4,hoizontal,open,MB,,49.87,-96.25,BO,LBs,BMc,130,-3,open fen,dc830713,83,07,13,1983-07-13,,647,222,2,Lake of the Woods
+190,-39830.81651,47954.6986,1983,16,1983-16,4,string fen,flark,MB,,49.43,-95.55,BO,LBst,BL,220,20,open fen,dc830626,83,06,26,1983-06-26,,630,164,1,Lake of the Woods
+33,-1306440.485,845882.5227,1981,17,1981-17,2,string fen,flark,AB,,54.7,-116.02,CD,SCb,BHc,246,21,open fen,dc810626,81,06,26,1981-06-26,,268,176,1,Boreal Foothills
+35,-1295694.98,847985.0167,1981,18,1981-18,2,string fen,flark,AB,,54.75,-115.87,CD,SCb,BHc,495,5,open fen,dc810627,81,06,27,1981-06-27,,269,183,1,Boreal Foothills
+39,-1274637.731,843186.1203,1981,20,1981-20,2,string fen,flark,AB,,54.77,-115.53,CD,SCb,BHc,343,-1,open fen,dc810628,81,06,28,1981-06-28,,270,207,2,Boreal Foothills
+9,-1321479.206,590893.8401,1981,4,Apr-81,4,basin_fen,centre,AB,,52.45,-115,CD,SCb,BMc,184,23,open fen,dc810605,81,06,05,1981-06-05,,247,135,1,Boreal Foothills
+10,-1321479.206,590893.8401,1981,4,Apr-81,4,basin_fen,margin,AB,,52.45,-115,CD,SCb,BMc,56,20,open fen,dc810605,81,06,05,1981-06-05,,247,135,1,Boreal Foothills
+14,-1342800.213,586308.347,1981,7,Jul-81,4,drainage,open,AB,,52.35,-115.28,CD,SCb,BMc,331,0,open fen,dc810607,81,06,07,1981-06-07,,249,145,1,Boreal Foothills
+18,-1379820.926,734653.6428,1981,9,Sep-81,4,hoizontal,open,AB,,53.52,-116.53,CD,SCb,BMc,298,0,open fen,dc810609,81,06,09,1981-06-09,,251,93,0,Boreal Foothills
+20,-1378001.021,739823.2687,1981,10,Oct-81,4,hoizontal,open,AB,,53.57,-116.53,CD,SCb,BMc,300,0,open fen,dc810610,81,06,10,1981-06-10,,252,97,0,Boreal Foothills
+12,-1334249.033,595069.1139,1981,6,Jun-81,4,string fen,flark,AB,,52.45,-115.2,CD,SCb,BMc,322,11,open fen,dc810606,81,06,06,1981-06-06,,248,139,1,Boreal Foothills
+22,-1444800.092,735926.0117,1981,11,Nov-81,4,string fen,flark,AB,,53.33,-117.47,CD,SCb,BMc,488,0,open fen,dc810617,81,06,17,1981-06-17,,259,186,1,Boreal Foothills
+25,-1414516.198,748206.6609,1981,52,1981-52,4,string fen,flark,AB,,53.53,-117.1,CD,SCb,BMc,452,-11,open fen,dc810618,81,06,18,1981-06-18,,260,159,1,Boreal Foothills
+1,-1322756.778,591309.5604,1981,1,Jan-81,5,string fen,flark,AB,,52.45,-115.02,CD,SCb,BMc,258,0,open fen,dc810602,81,06,02,1981-06-02,,244,128,1,Boreal Foothills
+4,-1321479.206,590893.8401,1981,2,Feb-81,5,string fen,flark,AB,,52.45,-115,CD,SCb,BMc,283,10,open fen,dc810603,81,06,03,1981-06-03,,245,122,1,Boreal Foothills
+16,-1400468.15,663990.1145,1981,8,Aug-81,6,string fen,flark,AB,,52.85,-116.47,CD,SCs,BMc,363,0,open fen,dc810608,81,06,08,1981-06-08,,250,130,1,Boreal Foothills
+320,-794710.5475,774105.4119,1984,63,1984-63,2,basin_fen,open,SK,,55.3,-107.85,BO,HBs,BHc,393,-10,open fen,dc840807,84,08,07,1984-08-07,,853,411,4,Central Boreal Plains
+326,-815115.8049,803989.5522,1984,69,1984-69,2,basin_fen,open,SK,,55.53,-108.27,BO,MBs,BHc,177,-20,open fen,dc840810,84,08,10,1984-08-10,,856,428,4,Central Boreal Plains
+46,-1059047.576,863824.09,1981,25,1981-25,2,string fen,string,AB,,55.53,-112.33,BO,MBs,BHc,757,-9,open fen,dc810708,81,07,08,1981-07-08,,280,318,3,Central Boreal Plains
+314,-805998.9423,709527.4917,1984,58,1984-58,3,northern plateau,drainage,SK,,54.7,-107.82,BO,LBs,BMc,160,-20,open fen,dc840803,84,08,03,1984-08-03,,849,412,4,Central Boreal Plains
+281,-625096.9132,608216.3307,1984,30,1984-30,3,basin_fen,open,SK,,54.08,-104.75,BO,MBs,BMc,129,-5,open fen,dc840623,84,06,23,1984-06-23,,808,140,1,Central Boreal Plains
+293,-632642.7827,683574.2024,1984,41,1984-41,3,drainage,grassy,SK,,54.75,-105.05,BO,MBs,BHc,119,14,open fen,dc840715,84,07,15,1984-07-15,,830,226,2,Central Boreal Plains
+316,-805998.9423,709527.4917,1984,59,1984-59,3,drainage,open,SK,,54.7,-107.82,BO,LBs,BMc,160,-15,open fen,dc840803,84,08,03,1984-08-03,,849,412,4,Central Boreal Plains
+248,-508700.4775,456067.0721,1984,1,Jan-84,3,hoizontal,open,SK,,52.85,-102.67,BO,LBs,BMt,205,16,open fen,dc840606,84,06,06,1984-06-06,,791,149,1,Central Boreal Plains
+48,-1044769.952,831576.858,1981,27,1981-27,4,basin_fen,open,AB,,55.28,-111.97,BO,MBs,BHc,200,-8,open fen,dc810709,81,07,09,1981-07-09,,281,327,3,Central Boreal Plains
+235,-348589.6095,210979.4895,1983,48,1983-48,4,basin_fen,open,MB,,50.78,-99.98,BO,MBs,BMc,133,-12,open fen,dc830810,83,08,10,1983-08-10,,675,300,3,Central Boreal Plains
+329,-825322.2716,847437.6889,1984,72,1984-72,4,basin_fen,open,SK,,55.9,-108.58,BO,MBs,BHc,446,-10,open fen,dc840812,84,08,12,1984-08-12,,858,428,4,Central Boreal Plains
+31,-1303641.877,945464.265,1981,16,1981-16,4,hoizontal,open,AB,,55.57,-116.5,BO,MBs,BMc,100,0,open fen,dc810625,81,06,25,1981-06-25,,267,275,2,Central Boreal Plains
+52,-1034689.764,799437.1562,1981,31,1981-31,4,hoizontal,open,AB,,55.02,-111.68,BO,MBs,BHc,247,-12,open fen,dc810711,81,07,11,1981-07-11,,283,343,3,Central Boreal Plains
+68,-1197992.587,844733.9609,1981,43,1981-43,4,hoizontal,open,AB,,55,-114.38,BO,LBs,BMc,81,-2,open fen,dc810727,81,07,27,1981-07-27,,299,264,2,Central Boreal Plains
+78,-1182881.938,859454.5889,1981,51,1981-51,4,string fen,flark,AB,,55.17,-114.22,BO,LBs,BMc,303,-4,open fen,dc810731,81,07,31,1981-07-31,,303,289,2,Central Boreal Plains
+270,-650203.5874,573358.8459,1984,22,1984-22,4,string fen,flark,SK,,53.73,-105.05,BO,LBs,BMc,172,16,open fen,dc840618,84,06,18,1984-06-18,,803,140,1,Central Boreal Plains
+287,-697728.4179,611219.7904,1984,36,1984-36,4,string fen,flark,SK,,54,-105.87,BO,MBs,BMc,302,13,open fen,dc840627,84,06,27,1984-06-27,,812,189,1,Central Boreal Plains
+323,-803673.2232,798241.735,1984,66,1984-66,4,string fen,flark,SK,,55.5,-108.07,BO,MBs,BHc,242,-2,open fen,dc840809,84,08,09,1984-08-09,,855,424,4,Central Boreal Plains
+332,-776244.4135,690197.499,1984,75,1984-75,4,string fen,flark,SK,,54.58,-107.3,BO,LBs,BMc,330,0,open fen,dc840814,84,08,14,1984-08-14,,860,393,3,Central Boreal Plains
+73,-1213190.574,996342.4058,1981,47,1981-47,5,basin_fen,open,AB,,56.28,-115.37,BO,MBs,BHc,135,-4,open fen,dc810729,81,07,29,1981-07-29,,301,384,3,Central Boreal Plains
+70,-1172230.702,851580.6074,1981,45,1981-45,5,string fen,flark,AB,,55.13,-114.02,BO,LBs,BMc,213,0,open fen,dc810728,81,07,28,1981-07-28,,300,269,2,Central Boreal Plains
+82,-416006.0675,501014.0614,1982,3,Mar-82,,basin_fen,open,MB,,53.35,-101.35,BO,MBs,BMc,30,-10,open fen,dc820617,82,06,17,1982-06-17,,440,202,2,Eastern Boreal Plains
+97,-394040.4968,432725.6178,1982,14,1982-14,,spring fen,open,MB,,52.75,-100.92,BO,MBs,BMc,30,-9,open fen,dc820623,82,06,23,1982-06-23,,446,205,2,Eastern Boreal Plains
+110,-280215.026,486350.1991,1982,23,1982-23,,spring fen,open,MB,,53.32,-99.27,BO,MBs,BMc,191,0,open fen,dc820627,82,06,27,1982-06-27,,450,212,2,Eastern Boreal Plains
+128,-390471.2566,628333.852,1982,36,1982-36,3,basin_fen,open,MB,,54.53,-101.15,BO,HBs,BHc,126,-6,open fen,dc820716,82,07,16,1982-07-16,,469,282,2,Eastern Boreal Plains
+98,-397074.0258,457277.1255,1982,15,1982-15,3,drainage,shrub,MB,,52.97,-101,BO,MBs,BMc,173,-15,open fen,dc820623,82,06,23,1982-06-23,,446,204,2,Eastern Boreal Plains
+231,-139074.0189,232652.3261,1983,45,1983-45,4,northern plateau,drainage,MB,,51.08,-97,BO,LBs,BMc,100,-13,open fen,dc830807,83,08,07,1983-08-07,,672,428,4,Eastern Boreal Plains
+138,-418703.8734,602582.7073,1982,43,1982-43,4,basin_fen,open,MB,,54.27,-101.55,BO,MBs,BMc,178,-12,open fen,dc820721,82,07,21,1982-07-21,,474,321,3,Eastern Boreal Plains
+175,-95081.58361,73187.23599,1983,8,Aug-83,4,basin_fen,open,MB,,49.65,-96.32,BO,LBs,BMc,220,5,open fen,dc830621,83,06,21,1983-06-21,,625,196,1,Eastern Boreal Plains
+155,-264217.5702,590680.1155,1982,58,1982-58,4,hoizontal,open,MB,,54.28,-99.13,BO,HBs,BHc,210,-2,open fen,dc820806,82,08,06,1982-08-06,,490,270,2,Eastern Boreal Plains
+228,-142407.3739,237176.8748,1983,43,1983-43,4,hoizontal,open,MB,,51.12,-97.05,BO,LBs,BMc,93,-47,open fen,dc830806,83,08,06,1983-08-06,,671,423,4,Eastern Boreal Plains
+84,-415241.0066,508651.9823,1982,5,May-82,4,string fen,flark,MB,,53.42,-101.35,BO,MBs,BMc,120,0,open fen,dc820617,82,06,17,1982-06-17,,440,203,2,Eastern Boreal Plains
+88,-398582.0784,497102.1547,1982,8,Aug-82,4,string fen,flark,MB,,53.33,-101.08,BO,MBs,BMc,195,0,open fen,dc820619,82,06,19,1982-06-19,,442,211,2,Eastern Boreal Plains
+94,-395021.1004,594708.5604,1982,13,1982-13,4,string fen,flark,MB,,54.22,-101.17,BO,MBs,BMc,349,0,open fen,dc820622,82,06,22,1982-06-22,,445,251,2,Eastern Boreal Plains
+105,-402489.9156,558042.0736,1982,19,1982-19,4,string fen,flark,MB,,53.88,-101.23,BO,MBs,BMc,110,-8,open fen,dc820626,82,06,26,1982-06-26,,449,246,2,Eastern Boreal Plains
+107,-423155.338,514962.9707,1982,21,1982-21,4,string fen,flark,MB,,53.47,-101.48,BO,MBs,BMc,342,0,open fen,dc820627,82,06,27,1982-06-27,,450,234,2,Eastern Boreal Plains
+109,-410229.2531,492724.5994,1982,22,1982-22,4,string fen,flark,MB,,53.28,-101.25,BO,MBs,BMc,232,14,open fen,dc820627,82,06,27,1982-06-27,,450,236,2,Eastern Boreal Plains
+111,-400541.3838,604044.9789,1982,24,1982-24,4,string fen,flark,MB,,54.3,-101.27,BO,HBs,BMc,271,0,open fen,dc820628,82,06,28,1982-06-28,,451,233,2,Eastern Boreal Plains
+114,-287132.3152,442822.6052,1982,26,1982-26,4,string fen,flark,MB,,52.92,-99.33,BO,MBs,BMc,259,0,open fen,dc820630,82,06,30,1982-06-30,,453,253,2,Eastern Boreal Plains
+126,-377300.0686,632568.6486,1982,35,1982-35,4,string fen,flark,MB,,54.58,-100.95,BO,HBs,BHc,380,-7,open fen,dc820716,82,07,16,1982-07-16,,469,288,2,Eastern Boreal Plains
+140,-304531.6531,626404.7165,1982,45,1982-45,4,string fen,flark,MB,,54.58,-99.8,BO,HBs,BHc,205,-15,open fen,dc820731,82,07,31,1982-07-31,,484,339,3,Eastern Boreal Plains
+145,-303347.2471,625218.9844,1982,48,1982-48,4,string fen,flark,MB,,54.57,-99.78,BO,HBs,BHc,181,15,open fen,dc820801,82,08,01,1982-08-01,,485,345,3,Eastern Boreal Plains
+150,-264075.5982,592863.5541,1982,53,1982-53,4,string fen,flark,MB,,54.3,-99.13,BO,HBs,BHc,116,-2,open fen,dc820803,82,08,03,1982-08-03,,487,268,2,Eastern Boreal Plains
+152,-256512.8738,611010.1515,1982,55,1982-55,4,string fen,flark,MB,,54.47,-99.03,BO,HBs,BHc,170,6,open fen,dc820805,82,08,05,1982-08-05,,489,282,2,Eastern Boreal Plains
+156,-257436.2849,616547.2965,1982,59,1982-59,4,string fen,flark,MB,,54.52,-99.05,BO,HBs,BHc,100,11,open fen,dc820807,82,08,07,1982-08-07,,491,263,2,Eastern Boreal Plains
+186,-108175.8163,67928.30989,1983,15,1983-15,4,string fen,flark,MB,,49.6,-96.5,BO,LBs,BMt,247,13,open fen,dc830625,83,06,25,1983-06-25,also 27 jun 1983 on another card,629,133,1,Eastern Boreal Plains
+108,-423155.338,514962.9707,1982,21,1982-21,4,string fen,string,MB,,53.47,-101.48,BO,MBs,BMc,349,-20,open fen,dc820627,82,06,27,1982-06-27,,450,234,2,Eastern Boreal Plains
+129,-408851.6396,623564.4767,1982,37,1982-37,4,spring fen,open,MB,,54.47,-101.43,BO,MBs,BMc,117,-3,open fen,dc820717,82,07,17,1982-07-17,,470,281,2,Eastern Boreal Plains
+229,-160712.8769,249954.5824,1983,44,1983-44,5,drainage,open,MB,,51.23,-97.32,BO,LBs,BMc,144,-2,open fen,dc830807,83,08,07,1983-08-07,,672,421,4,Eastern Boreal Plains
+142,-303511.4156,623038.5537,1982,46,1982-46,5,string fen,flark,MB,,54.55,-99.78,BO,HBs,BHc,352,-3,open fen,dc820731,82,07,31,1982-07-31,,484,339,3,Eastern Boreal Plains
+300,-613605.701,755736.7877,1984,45,1984-45,3,basin_fen,shrub,SK,,55.43,-104.93,BO,HBs,BHc,654,-18,shrubby fen,dc840717,84,07,17,1984-07-17,,832,236,2,Western Boreal Shield
+259,-489876.4837,715168.6054,1984,11,Nov-84,3,collapse scar fen,shrub,SK,,55.22,-102.87,BO,HBs,BHc,368,-17,shrubby fen,dc840612,84,06,12,1984-06-12,,797,122,1,Western Boreal Shield
+260,-491223.8494,704334.686,1984,12,Dec-84,3,drainage,shrub,SK,,55.12,-102.87,BO,HBs,BHc,376,-36,shrubby fen,dc840612,84,06,12,1984-06-12,,797,120,1,Western Boreal Shield
+298,-642521.3317,732746.5183,1984,43,1984-43,3,string fen,margin,SK,,55.18,-105.33,BO,HBs,BHc,271,-24,shrubby fen,dc840716,84,07,16,1984-07-16,,831,221,2,Western Boreal Shield
+121,-412718.5754,690970.4051,1982,30,1982-30,4,basin_fen,shrub,MB,,55.08,-101.6,BO,HBs,BHc,333,-10,shrubby fen,dc820714,82,07,14,1982-07-14,,467,255,2,Western Boreal Shield
+262,-525567.5926,659169.3029,1984,14,1984-14,4,drainage,shrub,SK,,54.67,-103.32,BO,MBs,BHc,399,-12,shrubby fen,dc840613,84,06,13,1984-06-13,,798,117,1,Western Boreal Shield
+163,-314646.2841,643628.1856,1982,65,1982-65,4,hoizontal,shrub,MB,,54.73,-99.98,BO,HBs,BHc,227,-17,shrubby fen,dc820811,82,08,11,1982-08-11,,495,333,3,Western Boreal Shield
+297,-642521.3317,732746.5183,1984,43,1984-43,4,string fen,string,SK,,55.18,-105.33,BO,HBs,BHc,388,-22,shrubby fen,dc840716,84,07,16,1984-07-16,,831,221,2,Western Boreal Shield
+165,-74542.87345,6157.677575,1983,2,Feb-83,,hoizontal,shrub,MB,,49.05,-96.02,BO,LBs,BMc,148,-1,shrubby fen,dc830616,83,06,16,1983-06-16,,620,189,1,Lake of the Woods
+191,-39830.81651,47954.6986,1983,16,1983-16,4,string fen,string,MB,,49.43,-95.55,BO,LBst,BL,240,-6,shrubby fen,dc830626,83,06,26,1983-06-26,,630,164,1,Lake of the Woods
+27,-1338479.241,1143770.532,1981,12,Dec-81,,collapse scar fen,shrub,AB,,57.17,-118.17,CD,SCb,BMc,45,-63,shrubby fen,dc810623,81,06,23,1981-06-23,,265,271,2,Boreal Foothills
+36,-1295694.98,847985.0167,1981,18,1981-18,2,string fen,string,AB,,54.75,-115.87,CD,SCb,BHc,554,-12,shrubby fen,dc810627,81,06,27,1981-06-27,,269,183,1,Boreal Foothills
+41,-1280159.808,834662.5119,1981,21,1981-21,4,collapse scar fen,shrub,AB,,54.68,-115.57,CD,SCb,BHc,363,-3,shrubby fen,dc810629,81,06,29,1981-06-29,,271,203,2,Boreal Foothills
+23,-1444800.092,735926.0117,1981,11,Nov-81,5,string fen,string,AB,,53.33,-117.47,CD,SCb,BMc,510,-5,shrubby fen,dc810617,81,06,17,1981-06-17,,259,186,1,Boreal Foothills
+63,-1181792.336,854541.3585,1981,39,1981-39,,basin_fen,centre,AB,,55.13,-114.18,BO,LBs,BMc,195,-3,shrubby fen,dc810723,81,07,23,1981-07-23,,295,235,2,Central Boreal Plains
+303,-618064.5395,686808.3577,1984,48,1984-48,,basin_fen,shrub,SK,,54.8,-104.83,BO,MBs,BHc,133,-24,shrubby fen,dc840719,84,07,19,1984-07-19,,834,259,2,Central Boreal Plains
+279,-641165.8201,609623.3661,1984,29,1984-29,3,basin_fen,shrub,SK,,54.07,-105,BO,MBs,BMc,138,19,shrubby fen,dc840622,84,06,22,1984-06-22,,807,129,1,Central Boreal Plains
+305,-617367.1548,678958.5469,1984,49,1984-49,3,basin_fen,shrub,SK,,54.73,-104.8,BO,MBs,BHc,210,-31,shrubby fen,dc840719,84,07,19,1984-07-19,,834,257,2,Central Boreal Plains
+295,-633998.0999,687110.2456,1984,42,1984-42,3,drainage,shrub,SK,,54.78,-105.08,BO,MBs,BHc,190,-23,shrubby fen,dc840715,84,07,15,1984-07-15,,830,222,2,Central Boreal Plains
+330,-807625.0689,757818.9289,1984,73,1984-73,3,drainage,shrub,SK,,55.13,-108,BO,LBs,BHc,285,-25,shrubby fen,dc840812,84,08,12,1984-08-12,,858,431,4,Central Boreal Plains
+250,-493150.5321,463057.2137,1984,2,Feb-84,4,basin_fen,shrub,SK,,52.93,-102.45,BO,LBs,BMc,170,-2,shrubby fen,dc840606,84,06,06,1984-06-06,,791,147,1,Central Boreal Plains
+277,-652035.2808,594727.5111,1984,27,1984-27,4,basin_fen,shrub,SK,,53.92,-105.13,BO,MBs,BMc,216,-7,shrubby fen,dc840621,84,06,21,1984-06-21,,806,137,1,Central Boreal Plains
+283,-698500.5099,636902.0458,1984,32,1984-32,4,basin_fen,shrub,SK,,54.23,-105.95,BO,MBs,BMc,285,-10,shrubby fen,dc840625,84,06,25,1984-06-25,,810,192,1,Central Boreal Plains
+285,-666646.368,652562.9971,1984,34,1984-34,4,basin_fen,shrub,SK,,54.42,-105.5,BO,MBs,BHc,250,-17,shrubby fen,dc840626,84,06,26,1984-06-26,,811,164,1,Central Boreal Plains
+286,-670425.8887,637667.7171,1984,35,1984-35,4,basin_fen,shrub,SK,,54.28,-105.52,BO,MBs,BMc,166,-20,shrubby fen,dc840626,84,06,26,1984-06-26,,811,165,1,Central Boreal Plains
+289,-707497.3792,604025.4489,1984,37,1984-37,4,basin_fen,shrub,SK,,53.92,-106,BO,MBs,BMc,225,-2,shrubby fen,dc840628,84,06,28,1984-06-28,,813,189,1,Central Boreal Plains
+318,-765625.5485,671429.5542,1984,61,1984-61,4,basin_fen,shrub,SK,,54.43,-107.08,BO,LBs,BMc,330,-15,shrubby fen,dc840805,84,08,05,1984-08-05,,851,424,4,Central Boreal Plains
+64,-1184671.596,860012.9203,1981,40,1981-40,4,hoizontal,shrub,AB,,55.17,-114.25,BO,LBs,BMc,202,-3,shrubby fen,dc810723,81,07,23,1981-07-23,,295,232,2,Central Boreal Plains
+66,-1179128.579,852570.7007,1981,41,1981-41,4,hoizontal,shrub,AB,,55.12,-114.13,BO,LBs,BMc,83,-17,shrubby fen,dc810724,81,07,24,1981-07-24,,296,244,2,Central Boreal Plains
+67,-1193493.057,799834.4789,1981,42,1981-42,4,hoizontal,shrub,AB,,54.62,-114.1,BO,LBs,BMc,282,-16,shrubby fen,dc810724,81,07,24,1981-07-24,,296,222,2,Central Boreal Plains
+275,-621756.4408,578900.8081,1984,26,1984-26,4,string fen,flark,SK,,53.82,-104.63,BO,LBs,BMc,242,14,shrubby fen,dc840621,84,06,21,1984-06-21,,806,127,1,Central Boreal Plains
+276,-621756.4408,578900.8081,1984,26,1984-26,4,string fen,string,SK,,53.82,-104.63,BO,LBs,BMc,284,-9,shrubby fen,dc840621,84,06,21,1984-06-21,,806,127,1,Central Boreal Plains
+288,-697728.4179,611219.7904,1984,36,1984-36,4,string fen,string,SK,,54,-105.87,BO,MBs,BMc,329,-8,shrubby fen,dc840627,84,06,27,1984-06-27,,812,189,1,Central Boreal Plains
+333,-776244.4135,690197.499,1984,75,1984-75,4,string fen,string,SK,,54.58,-107.3,BO,LBs,BMc,348,-35,shrubby fen,dc840814,84,08,14,1984-08-14,,860,393,3,Central Boreal Plains
+99,-397074.0258,457277.1255,1982,15,1982-15,4,drainage,treed_conif,MB,,52.97,-101,BO,MBs,BMc,200,-34,shrubby fen,dc820623,82,06,23,1982-06-23,,446,204,2,Eastern Boreal Plains
+80,-354554.4386,541521.4613,1982,1,Jan-82,4,hoizontal,shrub,MB,,53.77,-100.47,BO,MBs,BMc,92,-5,shrubby fen,dc820616,82,06,16,1982-06-16,,439,222,2,Eastern Boreal Plains
+81,-375288.2779,549961.3153,1982,2,Feb-82,4,hoizontal,shrub,MB,,53.83,-100.8,BO,MBs,BMc,320,0,shrubby fen,dc820616,82,06,16,1982-06-16,,439,225,2,Eastern Boreal Plains
+86,-363780.2005,584099.0389,1982,6,Jun-82,4,hoizontal,shrub,MB,,54.15,-100.67,BO,MBs,BMc,140,0,shrubby fen,dc820618,82,06,18,1982-06-18,,441,234,2,Eastern Boreal Plains
+90,-434444.7888,532665.2238,1982,11,Nov-82,4,hoizontal,shrub,MB,,53.62,-101.68,BO,MBs,BMc,126,0,shrubby fen,dc820620,82,06,20,1982-06-20,,443,220,2,Eastern Boreal Plains
+91,-385463.6546,600384.2584,1982,12,Dec-82,4,hoizontal,shrub,MB,,54.28,-101.03,BO,MBs,BMc,168,0,shrubby fen,dc820621,82,06,21,1982-06-21,,444,241,2,Eastern Boreal Plains
+149,-268849.0308,569049.8021,1982,52,1982-52,4,hoizontal,shrub,MB,,54.08,-99.18,BO,HBs,BHc,157,-12,shrubby fen,dc820803,82,08,03,1982-08-03,,487,261,2,Eastern Boreal Plains
+141,-304531.6531,626404.7165,1982,45,1982-45,4,string fen,string,MB,,54.58,-99.8,BO,HBs,BHc,186,-39,shrubby fen,dc820731,82,07,31,1982-07-31,,484,339,3,Eastern Boreal Plains
+143,-303511.4156,623038.5537,1982,46,1982-46,4,string fen,string,MB,,54.55,-99.78,BO,HBs,BHc,367,-20,shrubby fen,dc820731,82,07,31,1982-07-31,,484,339,3,Eastern Boreal Plains
+146,-303347.2471,625218.9844,1982,48,1982-48,4,string fen,string,MB,,54.57,-99.78,BO,HBs,BHc,217,-5,shrubby fen,dc820801,82,08,01,1982-08-01,,485,345,3,Eastern Boreal Plains
+153,-256512.8738,611010.1515,1982,55,1982-55,4,string fen,string,MB,,54.47,-99.03,BO,HBs,BHc,173,-18,shrubby fen,dc820805,82,08,05,1982-08-05,,489,282,2,Eastern Boreal Plains
+188,-108175.8163,67928.30989,1983,15,1983-15,4,string fen,string,MB,,49.6,-96.5,BO,LBs,BMt,270,-14,shrubby fen,dc830625,83,06,25,1983-06-25,also 27 jun 1983 on another card,629,133,1,Eastern Boreal Plains
+252,-459999.8361,442718.0178,1984,4,Apr-84,4,string fen,string,SK,,52.78,-101.92,BO,LBs,BMc,199,-10,shrubby fen,dc840608,84,06,08,1984-06-08,,793,84,0,Eastern Boreal Plains
+266,-430047.873,658753.0804,1984,18,1984-18,,basin_fen,treed_conif,SK,,54.77,-101.82,BO,HBs,BHc,320,-49,treed fen,dc840615,84,06,15,1984-06-15,,800,130,1,Western Boreal Shield
+268,-436210.1933,660520.4068,1984,20,1984-20,3,basin_fen,treed_conif,SK,,54.78,-101.92,BO,HBs,BHc,355,-20,treed fen,dc840615,84,06,15,1984-06-15,,800,131,1,Western Boreal Shield
+291,-610238.46,704388.1244,1984,39,1984-39,3,drainage,treed_conif,SK,,54.97,-104.75,BO,HBs,BHc,211,-23,treed fen,dc840713,84,07,13,1984-07-13,,828,265,2,Western Boreal Shield
+132,-317759.8819,660315.1833,1982,39,1982-39,4,basin_fen,treed_conif,MB,,54.88,-100.05,BO,HBs,BHc,314,-30,treed fen,dc820718,82,07,18,1982-07-18,,471,278,2,Western Boreal Shield
+261,-498770.5567,659039.6875,1984,13,1984-13,4,basin_fen,treed_conif,SK,,54.7,-102.9,BO,HBs,BHc,136,-15,treed fen,dc840613,84,06,13,1984-06-13,,798,121,1,Western Boreal Shield
+263,-488207.4443,677550.6679,1984,15,1984-15,4,basin_fen,treed_conif,SK,,54.88,-102.77,BO,HBs,BHc,435,-20,treed fen,dc840614,84,06,14,1984-06-14,,799,130,1,Western Boreal Shield
+168,-42155.26006,31314.8906,1983,3,Mar-83,,hoizontal,treed_conif,MB,,49.28,-95.58,BO,LBst,BL,154,-24,treed fen,dc830617,83,06,17,1983-06-17,,621,172,1,Lake of the Woods
+194,-39217.04761,118933.7842,1983,19,1983-19,3,drainage,treed_conif,MB,,50.07,-95.55,BO,LBst,BL,227,-12,treed fen,dc830628,83,06,28,1983-06-28,,632,176,1,Lake of the Woods
+184,-34037.35762,47908.24511,1983,13,1983-13,3,string fen,string,MB,,49.43,-95.47,BO,LBst,BL,170,-33,treed fen,dc830624,83,06,24,1983-06-24,,628,152,1,Lake of the Woods
+216,-95290.70221,165165.2557,1983,33,1983-33,4,hoizontal,shrub,MB,,50.48,-96.35,BO,LBst,BMc,174,-3,treed fen,dc830717,83,07,17,1983-07-17,,651,287,2,Lake of the Woods
+167,-42155.26006,31314.8906,1983,3,Mar-83,4,hoizontal,treed_conif,MB,,49.28,-95.58,BO,LBst,BL,124,-14,treed fen,dc830617,83,06,17,1983-06-17,,621,172,1,Lake of the Woods
+177,-79236.39089,72885.77143,1983,9,Sep-83,4,hoizontal,treed_conif,MB,,49.65,-96.1,BO,LBs,BMc,104,-10,treed fen,dc830621,83,06,21,1983-06-21,,625,196,1,Lake of the Woods
+192,-41060.35424,72384.58047,1983,17,1983-17,4,hoizontal,treed_conif,MB,,49.65,-95.57,BO,LBst,BL,273,-26,treed fen,dc830626,83,06,26,1983-06-26,,630,157,1,Lake of the Woods
+206,-89560.58232,97479.68315,1983,27,1983-27,4,hoizontal,treed_conif,MB,,49.87,-96.25,BO,LBs,BMc,147,-32,treed fen,dc830713,83,07,13,1983-07-13,,647,222,2,Lake of the Woods
+215,-95290.70221,165165.2557,1983,32,1983-32,4,hoizontal,treed_conif,MB,,50.48,-96.35,BO,LBst,BMc,120,-2,treed fen,dc830717,83,07,17,1983-07-17,,651,287,2,Lake of the Woods
+199,-90418.14271,126313.3141,1983,22,1983-22,6,spring fen,treed_conif,MB,,50.13,-96.27,BO,LBs,BMc,235,-21,treed fen,dc830710,83,07,10,1983-07-10,,644,206,2,Lake of the Woods
+40,-1274637.731,843186.1203,1981,20,1981-20,1,string fen,string,AB,,54.77,-115.53,CD,SCb,BHc,389,-12,treed fen,dc810628,81,06,28,1981-06-28,,270,207,2,Boreal Foothills
+34,-1306440.485,845882.5227,1981,17,1981-17,2,string fen,string,AB,,54.7,-116.02,CD,SCb,BHc,258,-10,treed fen,dc810626,81,06,26,1981-06-26,,268,176,1,Boreal Foothills
+11,-1328906.524,604885.2802,1981,5,May-81,4,basin_fen,treed_conif,AB,,52.55,-115.17,CD,SCb,BMc,225,0,treed fen,dc810605,81,06,05,1981-06-05,,247,134,1,Boreal Foothills
+15,-1342800.213,586308.347,1981,7,Jul-81,4,drainage,treed island,AB,,52.35,-115.28,CD,SCb,BMc,356,-25,treed fen,dc810607,81,06,07,1981-06-07,,249,145,1,Boreal Foothills
+13,-1334249.033,595069.1139,1981,6,Jun-81,4,string fen,string,AB,,52.45,-115.2,CD,SCb,BMc,340,-15,treed fen,dc810606,81,06,06,1981-06-06,,248,139,1,Boreal Foothills
+26,-1414516.198,748206.6609,1981,52,1981-52,4,string fen,string,AB,,53.53,-117.1,CD,SCb,BMc,463,-14,treed fen,dc810618,81,06,18,1981-06-18,,260,159,1,Boreal Foothills
+6,-1320799.138,592984.9113,1981,3,Mar-81,5,string fen,flark,AB,,52.47,-115,CD,SCb,BMc,408,-1,treed fen,dc810604,81,06,04,1981-06-04,,246,128,1,Boreal Foothills
+2,-1322756.778,591309.5604,1981,1,Jan-81,5,string fen,string,AB,,52.45,-115.02,CD,SCb,BMc,255,-8,treed fen,dc810602,81,06,02,1981-06-02,,244,128,1,Boreal Foothills
+3,-1322756.778,591309.5604,1981,1,Jan-81,5,string fen,string,AB,,52.45,-115.02,CD,SCb,BMc,248,-11,treed fen,dc810602,81,06,02,1981-06-02,,244,128,1,Boreal Foothills
+5,-1321479.206,590893.8401,1981,2,Feb-81,5,string fen,string,AB,,52.45,-115,CD,SCb,BMc,325,-7,treed fen,dc810603,81,06,03,1981-06-03,,245,122,1,Boreal Foothills
+19,-1379820.926,734653.6428,1981,9,Sep-81,6,hoizontal,treed_conif,AB,,53.52,-116.53,CD,SCb,BMc,330,-16,treed fen,dc810609,81,06,09,1981-06-09,,251,93,0,Boreal Foothills
+21,-1378001.021,739823.2687,1981,10,Oct-81,6,hoizontal,treed_conif,AB,,53.57,-116.53,CD,SCb,BMc,315,-7,treed fen,dc810610,81,06,10,1981-06-10,,252,97,0,Boreal Foothills
+17,-1400468.15,663990.1145,1981,8,Aug-81,6,string fen,string,AB,,52.85,-116.47,CD,SCs,BMc,370,-15,treed fen,dc810608,81,06,08,1981-06-08,,250,130,1,Boreal Foothills
+239,-395248.1518,309078.1372,1983,51,1983-51,,basin_fen,treed_conif,MB,,51.63,-100.77,BO,MBs,BMc,303,-24,treed fen,dc830811,83,08,11,1983-08-11,,676,299,2,Central Boreal Plains
+240,-405604.7669,345439.892,1983,52,1983-52,,basin_fen,treed_conif,MB,,51.95,-100.97,BO,MBs,BMc,310,-33,treed fen,dc830812,83,08,12,1983-08-12,,677,281,2,Central Boreal Plains
+242,-422296.1714,404534.8808,1983,54,1983-54,,basin_fen,treed_conif,MB,,52.47,-101.3,BO,MBs,BMt,210,-26,treed fen,dc830813,83,08,13,1983-08-13,,678,236,2,Central Boreal Plains
+244,-422432.9275,416699.7923,1983,56,1983-56,,basin_fen,treed_conif,MB,,52.58,-101.32,BO,MBs,BMt,275,-34,treed fen,dc830814,83,08,14,1983-08-14,,679,233,2,Central Boreal Plains
+278,-634590.1013,597505.2429,1984,28,1984-28,,basin_fen,treed_conif,SK,,53.97,-104.87,BO,MBs,BMc,272,-22,treed fen,dc840622,84,06,22,1984-06-22,,807,127,1,Central Boreal Plains
+280,-641165.8201,609623.3661,1984,29,1984-29,,basin_fen,treed_conif,SK,,54.07,-105,BO,MBs,BMc,247,-16,treed fen,dc840622,84,06,22,1984-06-22,,807,129,1,Central Boreal Plains
+302,-653948.1413,690350.056,1984,47,1984-47,,basin_fen,treed_conif,SK,,54.78,-105.4,BO,MBs,BHc,191,-33,treed fen,dc840718,84,07,18,1984-07-18,,833,249,2,Central Boreal Plains
+294,-632642.7827,683574.2024,1984,41,1984-41,3,drainage,treed_conif,SK,,54.75,-105.05,BO,MBs,BHc,254,-15,treed fen,dc840715,84,07,15,1984-07-15,,830,226,2,Central Boreal Plains
+62,-1181792.336,854541.3585,1981,39,1981-39,4,basin_fen,margin,AB,,55.13,-114.18,BO,LBs,BMc,82,-3,treed fen,dc810723,81,07,23,1981-07-23,,295,235,2,Central Boreal Plains
+238,-398532.8468,280590.0929,1983,50,1983-50,4,basin_fen,treed_conif,MB,,51.37,-100.78,BO,MBs,BMt,165,-14,treed fen,dc830811,83,08,11,1983-08-11,,676,311,3,Central Boreal Plains
+246,-408160.5875,303629.2252,1983,58,1983-58,4,basin_fen,treed_conif,MB,,51.57,-100.95,BO,MBs,BMt,266,-29,treed fen,dc830815,83,08,15,1983-08-15,,680,323,3,Central Boreal Plains
+269,-679730.0054,593721.0114,1984,21,1984-21,4,basin_fen,treed_conif,SK,,53.87,-105.55,BO,MBs,BMc,250,-9,treed fen,dc840617,84,06,17,1984-06-17,,802,132,1,Central Boreal Plains
+272,-657552.4887,576755.9578,1984,23,1984-23,4,basin_fen,treed_conif,SK,,53.75,-105.17,BO,LBs,BMc,168,-30,treed fen,dc840618,84,06,18,1984-06-18,,803,138,1,Central Boreal Plains
+273,-620434.9714,587562.3194,1984,24,1984-24,4,basin_fen,treed_conif,SK,,53.9,-104.63,BO,LBs,BMc,139,-36,treed fen,dc840620,84,06,20,1984-06-20,,805,153,1,Central Boreal Plains
+292,-644463.3179,720894.2104,1984,40,1984-40,4,basin_fen,treed_conif,SK,,55.07,-105.33,BO,MBs,BHc,386,-11,treed fen,dc840714,84,07,14,1984-07-14,,829,212,2,Central Boreal Plains
+334,-812904.6617,685275.0394,1984,76,1984-76,4,basin_fen,treed_conif,SK,,54.47,-107.85,BO,LBs,BMc,423,-35,treed fen,dc840814,84,08,14,1984-08-14,,860,351,3,Central Boreal Plains
+325,-806731.0051,807796.4702,1984,67,1984-67,4,drainage,treed_conif,SK,,55.58,-108.15,BO,MBs,BHc,200,-25,treed fen,dc840810,84,08,10,1984-08-10,,856,426,4,Central Boreal Plains
+30,-1308865.982,1016739.678,1981,15,1981-15,4,hoizontal,treed_conif,AB,,56.17,-116.97,BO,LBs,BMc,136,-17,treed fen,dc810624,81,06,24,1981-06-24,,266,280,2,Central Boreal Plains
+32,-1303641.877,945464.265,1981,16,1981-16,4,hoizontal,treed_conif,AB,,55.57,-116.5,BO,MBs,BMc,106,-35,treed fen,dc810625,81,06,25,1981-06-25,,267,275,2,Central Boreal Plains
+43,-1255217.237,788437.7391,1981,23,1981-23,4,hoizontal,treed_conif,AB,,54.35,-114.97,BO,LBs,BHc,204,-28,treed fen,dc810701,81,07,01,1981-07-01,,273,243,2,Central Boreal Plains
+69,-1197992.587,844733.9609,1981,44,1981-44,4,hoizontal,treed_conif,AB,,55,-114.38,BO,LBs,BMc,96,-10,treed fen,dc810727,81,07,27,1981-07-27,,299,264,2,Central Boreal Plains
+282,-637891.2493,617970.2064,1984,31,1984-31,4,hoizontal,treed_conif,SK,,54.15,-104.97,BO,MBs,BMc,230,-10,treed fen,dc840623,84,06,23,1984-06-23,,808,136,1,Central Boreal Plains
+79,-1182881.938,859454.5889,1981,51,1981-51,4,string fen,string,AB,,55.17,-114.22,BO,LBs,BMc,314,-17,treed fen,dc810731,81,07,31,1981-07-31,,303,289,2,Central Boreal Plains
+271,-650203.5874,573358.8459,1984,22,1984-22,4,string fen,string,SK,,53.73,-105.05,BO,LBs,BMc,205,-27,treed fen,dc840618,84,06,18,1984-06-18,,803,140,1,Central Boreal Plains
+324,-803673.2232,798241.735,1984,66,1984-66,4,string fen,string,SK,,55.5,-108.07,BO,MBs,BHc,262,-35,treed fen,dc840809,84,08,09,1984-08-09,,855,424,4,Central Boreal Plains
+313,-808624.8653,696675.9351,1984,57,1984-57,4,shore fen,treed_conif,SK,,54.58,-107.82,BO,LBs,BMc,163,-33,treed fen,dc840802,84,08,02,1984-08-02,,848,392,3,Central Boreal Plains
+71,-1172230.702,851580.6074,1981,45,1981-45,5,string fen,string,AB,,55.13,-114.02,BO,LBs,BMc,224,-18,treed fen,dc810728,81,07,28,1981-07-28,,300,269,2,Central Boreal Plains
+247,-403920.283,334220.7565,1983,59,1983-59,6,basin_fen,treed_conif,MB,,51.85,-100.93,BO,MBs,BMc,355,-25,treed fen,dc830816,83,08,16,1983-08-16,,681,311,3,Central Boreal Plains
+65,-1184671.596,860012.9203,1981,40,1981-40,6,hoizontal,treed_conif,AB,,55.17,-114.25,BO,LBs,BMc,200,-15,treed fen,dc810723,81,07,23,1981-07-23,,295,232,2,Central Boreal Plains
+83,-416006.0675,501014.0614,1982,3,Mar-82,,basin_fen,treed_conif,MB,,53.35,-101.35,BO,MBs,BMc,60,-40,treed fen,dc820617,82,06,17,1982-06-17,,440,202,2,Eastern Boreal Plains
+113,-405156.9424,577009.9458,1982,25,1982-25,4,basin_fen,treed_conif,MB,,54.05,-101.3,BO,MBs,BMc,185,-28,treed fen,dc820629,82,06,29,1982-06-29,,452,263,2,Eastern Boreal Plains
+176,-95081.58361,73187.23599,1983,8,Aug-83,4,basin_fen,treed_conif,MB,,49.65,-96.32,BO,LBs,BMc,249,-15,treed fen,dc830621,83,06,21,1983-06-21,,625,196,1,Eastern Boreal Plains
+254,-453428.4281,626134.5655,1984,6,Jun-84,4,basin_fen,treed_conif,SK,,54.45,-102.13,BO,MBs,BMc,166,-11,treed fen,dc840610,84,06,10,1984-06-10,,795,98,0,Eastern Boreal Plains
+255,-451817.958,634756.474,1984,7,Jul-84,4,basin_fen,treed_conif,SK,,54.53,-102.12,BO,MBs,BMc,250,-24,treed fen,dc840610,84,06,10,1984-06-10,,795,97,0,Eastern Boreal Plains
+230,-160712.8769,249954.5824,1983,44,1983-44,4,drainage,treed_conif,MB,,51.23,-97.32,BO,LBs,BMc,180,-33,treed fen,dc830807,83,08,07,1983-08-07,,672,421,4,Eastern Boreal Plains
+92,-385463.6546,600384.2584,1982,12,Dec-82,4,hoizontal,treed_conif,MB,,54.28,-101.03,BO,MBs,BMc,126,-10,treed fen,dc820621,82,06,21,1982-06-21,,444,241,2,Eastern Boreal Plains
+101,-398973.7071,486120.4156,1982,16,1982-16,4,hoizontal,treed_conif,MB,,53.23,-101.07,BO,MBs,BMc,261,-39,treed fen,dc820624,82,06,24,1982-06-24,,447,217,2,Eastern Boreal Plains
+136,-324439.6612,632346.3926,1982,41,1982-41,4,hoizontal,treed_conif,MB,,54.62,-100.12,BO,HBs,BHc,169,-7,treed fen,dc820720,82,07,20,1982-07-20,,473,282,2,Eastern Boreal Plains
+117,-281981.9273,440273.647,1982,28,1982-28,4,string fen,treed island,MB,,52.9,-99.25,BO,MBs,BMc,206,-8,treed fen,dc820701,82,07,01,1982-07-01,,454,258,2,Eastern Boreal Plains
+85,-415241.0066,508651.9823,1982,5,May-82,4,string fen,string,MB,,53.42,-101.35,BO,MBs,BMc,135,-20,treed fen,dc820617,82,06,17,1982-06-17,,440,203,2,Eastern Boreal Plains
+89,-398582.0784,497102.1547,1982,8,Aug-82,4,string fen,string,MB,,53.33,-101.08,BO,MBs,BMc,217,-10,treed fen,dc820619,82,06,19,1982-06-19,,442,211,2,Eastern Boreal Plains
+95,-395021.1004,594708.5604,1982,13,1982-13,4,string fen,string,MB,,54.22,-101.17,BO,MBs,BMc,291,-42,treed fen,dc820622,82,06,22,1982-06-22,,445,251,2,Eastern Boreal Plains
+104,-402489.9156,558042.0736,1982,19,1982-19,4,string fen,string,MB,,53.88,-101.23,BO,MBs,BMc,92,-5,treed fen,dc820626,82,06,26,1982-06-26,,449,246,2,Eastern Boreal Plains
+112,-400541.3838,604044.9789,1982,24,1982-24,4,string fen,string,MB,,54.3,-101.27,BO,HBs,BMc,284,-4,treed fen,dc820628,82,06,28,1982-06-28,,451,233,2,Eastern Boreal Plains
+115,-287132.3152,442822.6052,1982,26,1982-26,4,string fen,string,MB,,52.92,-99.33,BO,MBs,BMc,304,-10,treed fen,dc820630,82,06,30,1982-06-30,,453,253,2,Eastern Boreal Plains
+127,-377300.0686,632568.6486,1982,35,1982-35,4,string fen,string,MB,,54.58,-100.95,BO,HBs,BHc,381,-34,treed fen,dc820716,82,07,16,1982-07-16,,469,288,2,Eastern Boreal Plains
+157,-257436.2849,616547.2965,1982,59,1982-59,4,string fen,string,MB,,54.52,-99.05,BO,HBs,BHc,115,-8,treed fen,dc820807,82,08,07,1982-08-07,,491,263,2,Eastern Boreal Plains
+87,-401418.2512,562338.335,1982,7,Jul-82,4,shore fen,treed_conif,MB,,53.92,-101.22,BO,MBs,BMc,143,0,treed fen,dc820618,82,06,18,1982-06-18,,441,239,2,Eastern Boreal Plains
+106,-405678.8596,584761.8612,1982,20,1982-20,4,spring fen,treed_conif,MB,,54.12,-101.32,BO,MBs,BMc,98,0,treed fen,dc820626,82,06,26,1982-06-26,,449,241,2,Eastern Boreal Plains
+118,-281981.9273,440273.647,1982,28,1982-28,6,string fen,treed island,MB,,52.9,-99.25,BO,MBs,BMc,244,-31,treed fen,dc820701,82,07,01,1982-07-01,,454,258,2,Eastern Boreal Plains
+151,-264075.5982,592863.5541,1982,53,1982-53,6,string fen,string,MB,,54.3,-99.13,BO,HBs,BHc,129,-38,treed fen,dc820803,82,08,03,1982-08-03,,487,268,2,Eastern Boreal Plains
+130,-408851.6396,623564.4767,1982,37,1982-37,6,spring fen,treed_conif,MB,,54.47,-101.43,BO,MBs,BMc,181,-55,treed fen,dc820717,82,07,17,1982-07-17,,470,281,2,Eastern Boreal Plains
