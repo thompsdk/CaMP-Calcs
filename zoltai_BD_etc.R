@@ -1,7 +1,7 @@
 library(rpart)
 library(rpart.plot)
 
-PROFILES <- read.csv("~/PROFILES_March11_2021.csv")
+PROFILES <- read.csv("~/CaMP-Calcs/PROFILES_March11_2021.csv")
 tree.for.model <- subset(PROFILES,DB_EST_TYPE == "BD_TREE_ORG" & MATERIAL_1 != "GAP.NSL")
 BD.training <- subset(PROFILES,DB_MEAS_EST == "MEAS")
 #BD.training$MIDDEPTH <- BD.training$UPPER_SAMP_DEPTH+BD.training$SAMP_THICK/2
@@ -22,7 +22,7 @@ MAE/mean(tree.for.model$BULK_DENSITY)
 
 ### Analysis of Zoltai BD data for CaMPS
 
-Zoltai <- read.csv("W:/EDM/Fire/Thompson/CBFA peatlands/CaMPS/DB Curve modelling/Zoltai.csv")
+Zoltai <- read.csv("~/CaMP-Calcs/Zoltai.csv")
 library(lme4)
 #library(cars)
 library(rpart)
@@ -169,8 +169,8 @@ summary(peatfit_inst)
 
 
 #### attach max depth data from each core to CampClass and lat/long/ecozone
-Samples <- read.csv("W:/EDM/Fire/Thompson/CBFA peatlands/CaMPS/DB Curve modelling/Mean depth by type-ecozone/Samples.csv")
-Sites <- read.csv("W:/EDM/Fire/Thompson/CBFA peatlands/CaMPS/DB Curve modelling/Mean depth by type-ecozone/Sites.csv")
+Samples <- read.csv("~/CaMP-Calcs/Samples.csv")
+Sites <- read.csv("~/CaMP-Calcs/Sites.csv")
 
 ### traverse samples, look for UNIQUE_SITE in samples, grab the fields CaMPClass1 and 2, lat, and long, from Sites, insert into Samples
 
@@ -184,7 +184,7 @@ write.csv(Samples,"Samples_w_loc2.csv")
 Samples$long <- Samples$long*-1
 
 ###load up data with samples, ecozones, and CaMP classes
-Samples_w_loc_csv_v2 <- read.delim("W:/EDM/Fire/Thompson/CBFA peatlands/CaMPS/DB Curve modelling/Mean depth by type-ecozone/Samples_w_loc_csv_v2.csv")
+Samples_w_loc_csv_v2 <- read.delim("~/CaMP-Calcs/Samples_w_loc_csv_v2.csv")
 ecozones.aov <- aov(MaxDepth ~ ECOZONE,data=Samples_w_loc_csv_v2)
 TukeyHSD(ecozones.aov)
 
