@@ -1,9 +1,32 @@
 library(rpart)
 library(rpart.plot)
+### Analysis of Zoltai BD data for CaMPS
+
+
+library(lme4)
+#library(cars)
+library(rpart)
+library(rpart.plot)
+#library(lmer)
+#boxplot(MaxNDVI ~ Class,MaxNDVI_MDC)
+#summary(aov(MaxNDVI ~ Class,data=MaxNDVI_MDC))
+
+####################################
+#### Load Data
+###########################
 
 PROFILES <- read.csv("~/CaMP-Calcs/PROFILES_March11_2021.csv")
 tree.for.model <- subset(PROFILES,DB_EST_TYPE == "BD_TREE_ORG" & MATERIAL_1 != "GAP.NSL")
 BD.training <- subset(PROFILES,DB_MEAS_EST == "MEAS")
+
+Zoltai <- read.csv("~/CaMP-Calcs/Zoltai.csv")
+
+
+##################################################
+#### simple regresstion tree for bulk density ####
+##################################################
+
+
 #BD.training$MIDDEPTH <- BD.training$UPPER_SAMP_DEPTH+BD.training$SAMP_THICK/2
 
 BD.tree <- rpart(BULK_DENSITY~ASH + UPPER_SAMP_DEPTH + MATERIAL_1 + MIDDEPTH + CWCS_CLASS,data=BD.training)
@@ -18,18 +41,11 @@ MAE <- mean(abs(tree.for.model$BULK_DENSITY-BD.predict))
 MAE/mean(tree.for.model$BULK_DENSITY)
 
 
+################################################################
+#### linear mixed-effects model for bulk density ##############
+################################################################
 
-
-### Analysis of Zoltai BD data for CaMPS
-
-Zoltai <- read.csv("~/CaMP-Calcs/Zoltai.csv")
-library(lme4)
-#library(cars)
-library(rpart)
-library(rpart.plot)
-#library(lmer)
-#boxplot(MaxNDVI ~ Class,MaxNDVI_MDC)
-#summary(aov(MaxNDVI ~ Class,data=MaxNDVI_MDC))
+### some simple linear models just to baseline
 
 Zoltai.lm1 = lm(BD ~ log(MIDDEPTH)+CaMPTree+CaMPNutrient,data=Zoltai)
 summary.lm(Zoltai.lm1)
@@ -38,7 +54,6 @@ Zoltai.lm2 = aov(BD ~ log(DEPTHCLASS)+CaMPTree+CaMPNutrient,data=Zoltai)
 Anova(Zoltai.lm2, type="III")
 summary.lm(Zoltai.lm2)
 
-#### Version with MDC as continuous variable within lmer
 
 Zoltai$PeatC_dens <- as.numeric(Zoltai$PeatC_dens)
 ### null model
@@ -123,6 +138,9 @@ for (i in seq(1:221)){
 std <- predict(BD.model2, newdata=Zoltai_std_curves)
 
 write.csv(std,"std_curves_output.csv")
+
+
+
 ### too much noise for interaction
 BD.model3 = lmer(BD ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPClass1*CaMPClass2,data=Zoltai,REML=FALSE)
 summary(BD.model3)
@@ -139,7 +157,7 @@ anova(BD.model2,BD.model4)
 ################################
 library(ggplot2)
 library(nls2)
-Zoltai_std_curves_long <- read.delim("P:/Thompson/Thompson/CBFA peatlands/CaMPS/DB Curve modelling/Zoltai_std_curves_long.csv")
+Zoltai_std_curves_long <- read.delim("~/CaMP-Calcs/Zoltai_std_curves_long.csv")
 Zoltai_std_curves_long$CaMPClass <- factor(Zoltai_std_curves_long$CaMPClass, levels = c('open bog','treed bog','forested bog','open poor fen','treed poor fen','forested poor fen','open rich fen','treed rich fen','forested rich fen','treed swamp','forested swamp'))
 Palette1 <- c("#0a4b32","#6a917b","#aad7bf","#5c5430","#aba476","#fbfabc","#792652","#af7a8f","#ffb6db","black","grey")
 
@@ -204,13 +222,8 @@ ggplot(Samples_w_ecozones_3978, aes(MaxDepth, colour = ECOZONE)) + stat_ecdf() +
 ### Using updated dataset Feb 2021 from Ilka
 #library("rpart.plot", lib.loc="~/R/win-library/3.4")
 
-PROFILESFeb3 <-  read.csv("C:/Users/thomp/Dropbox/CBFA Peatlands/CAMPS/acrotelm modelling/Feb2021/PROFILES_Feb2021.csv", stringsAsFactors=TRUE)
-setwd("C:/Users/thomp/Dropbox/CBFA Peatlands/CAMPS/acrotelm modelling/Feb2021")
+PROFILESFeb3 <-  read.csv("~/CaMP-Calcs/PROFILES_Feb2021.csv", stringsAsFactors=TRUE)
 
-### TO DO Feb 2021:
-##1) apply BD decision tree as before
-## 2) apply CTOT framework as per Ilka's docs from last time
-## do cross-validation on both if possible
 
 attach(PROFILESFeb3)
 bd.model.obs <- subset(PROFILESFeb3, BD_MEAS_EST == "MEAS" & ASH < 67)
@@ -249,11 +262,15 @@ CTOT_BY_MAT[2] <- mean(CTOT_BY_MAT[3],CTOT_BY_MAT[4]) ### reassign value of "B" 
 CTOT_BY_MAT[2]
 
 CTOT_BY_MAT
-write.csv(CTOT_BY_MAT,"CTOT_BY_MAT.csv")
+
+### use if you want to write to overwrite file:
+#write.csv(CTOT_BY_MAT,"CTOT_BY_MAT.csv")
 
 ### sum of stock of C (per sample) by coreID:
 CoreStock <- tapply(PROFILESFeb3$SAMP_C_STOCK_kg_C_m2,  CORE_ID..Jan.20., sum, na.rm=TRUE)
-write.csv(CoreStock,"Core_stock_C_kg_m2.csv")
+
+### use if you want to write to overwrite file:
+#write.csv(CoreStock,"Core_stock_C_kg_m2.csv")
 
 
 
@@ -289,8 +306,8 @@ write.csv(bd.predict.out,"bd_predict_out_org_only.csv")
 write.csv(bd.predict.out.min,"bd_predict_out_min_only.csv")
 write.csv(CTOT.predict.out,"CTOT_predict_out.csv")
 
-list.files(path = "D:/AllDec20_3857")
-tilesinfo <- file.info(list.files("D:/AllDec20_3857", full.names=TRUE))
+#list.files(path = "D:/AllDec20_3857")
+#tilesinfo <- file.info(list.files("D:/AllDec20_3857", full.names=TRUE))
 
 ### update bulk density model
 ProfilesSub <- subset(PROFILESFeb3,select = c(BULK_DENSITY,C_TOT_PCT))
