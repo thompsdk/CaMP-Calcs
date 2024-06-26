@@ -2,13 +2,21 @@ library(rpart)
 library(rpart.plot)
 ### Analysis of Zoltai BD data for CaMPS
 library(car)
-
 library(lme4)
 #library(cars)
-
+library(dplyr)
+library(tidyverse)
 
 #boxplot(MaxNDVI ~ Class,MaxNDVI_MDC)
 #summary(aov(MaxNDVI ~ Class,data=MaxNDVI_MDC))
+
+
+
+
+##################################################
+#### simple regression tree for bulk density
+#### used in the Bauer et al 2024 national peat core composite
+##################################################
 
 ####################################
 #### Load Data
@@ -19,11 +27,6 @@ tree.for.model <- subset(PROFILES,DB_EST_TYPE == "BD_TREE_ORG" & MATERIAL_1 != "
 BD.training <- subset(PROFILES,DB_MEAS_EST == "MEAS")
 
 Zoltai <- read.csv("~/CaMP-Calcs/Zoltai.csv")
-
-
-##################################################
-#### simple regression tree for bulk density ####
-##################################################
 
 
 #BD.training$MIDDEPTH <- BD.training$UPPER_SAMP_DEPTH+BD.training$SAMP_THICK/2
@@ -49,6 +52,67 @@ MAE/mean(tree.for.model$BULK_DENSITY)
 ###https://open.canada.ca/data/dataset/e287b0dd-8b07-435b-8a76-0c7ec84ac228
 
 ### the file PROFILES_2024.csv provided is from Bauer et al 2024
+
+PROFILES_2024 <- read.csv("~/CaMP-Calcs/PROFILES_2024.csv")
+
+
+### step 1: calculate the peat carbon density from bulk density and carbon content
+PROFILES_2024$PeatC_dens <- PROFILES_2024$BULK_DENSITY * PROFILES_2024$C_TOT_PCT/100
+
+### step 2: compute an ordinal depthclass at 15 cm intervals, representing the typical sample thickness in the Zoltai dataset
+
+PROFILES_2024$DEPTHCLASS <- floor(PROFILES_2024$UPPER_SAMP_DEPTH/15)+1
+
+### step 3: import ecozone, tree cover, and peat type data from the CORESITES 2024 tabular data
+### using dplyr inner_join https://dplyr.tidyverse.org/reference/mutate-joins.html
+
+CORESITES_2024 <- read.csv("~/CaMP-Calcs/CORESITES_2024_ecozones.csv")
+
+### need to compute a CaMPNutrient factor of "bog", "poor fen", "rich fen"
+
+CORESITES_2024$FEN_TYPE <- as.factor(CORESITES_2024$FEN_TYPE)
+CORESITES_2024$CWCS_CLASS <- as.factor(CORESITES_2024$CWCS_CLASS)
+CORESITES_2024$CWCS_FORM <- as.factor(CORESITES_2024$CWCS_FORM)
+CORESITES_2024$ECOZONE_NAME_EN <- as.factor(CORESITES_2024$ECOZONE_NAME_EN)
+
+levels(CORESITES_2024$CWCS_CLASS)
+levels(CORESITES_2024$FEN_TYPE)
+levels(CORESITES_2024$CWCS_FORM)
+
+### split into poor and rich fens
+CORESITES_2024$CaMPNutrient_2024 <- case_when(
+  CORESITES_2024$CWCS_FORM == "palsa" | CORESITES_2024$CWCS_FORM == "peat plateau" | CORESITES_2024$CWCS_FORM == "polygonal peat plateau" | CORESITES_2024$CWCS_FORM == "plateau : northern plateau" ~ "permafrost",
+  CORESITES_2024$CWCS_CLASS == "bog" ~ "bog",
+  CORESITES_2024$CWCS_CLASS == "marsh" ~ "marsh",
+  CORESITES_2024$CWCS_CLASS == "swamp" ~ "swamp",
+  CORESITES_2024$CWCS_CLASS == "fen" & CORESITES_2024$FEN_TYPE == "poor" ~ "poor fen",
+  CORESITES_2024$CWCS_CLASS == "fen" & CORESITES_2024$FEN_TYPE != "poor" ~ "rich fen",
+  .default = as.character(NA)
+)
+
+CORESITES_2024$CaMPNutrient_2024 <- as.factor(CORESITES_2024$CaMPNutrient_2024)
+
+levels(CORESITES_2024$CaMPNutrient_2024)
+levels(CORESITES_2024$ECOZONE_NAME_EN)
+
+### right now using the provided "TREED" Y/N field, but could also go back in time with SCANFI and get the tree canopy cover at the time of sampling where it is not otherwise provided
+
+### extract the Nutrient class and TREED per row in PROFILES_2024
+
+#### build a dataframe of just CORESITES COREID, PROV, ECOZONE, CaMPNutrient, and TREEED
+
+CORESITES_extract <- CORESITES_2024 %>% select(CORE_ID, PROV_TERR, ECOZONE_NAME_EN,CaMPNutrient_2024,TREED)
+
+### then inner_join
+
+PROFILE_2024_w_site_info <- inner_join(PROFILES_2024,CORESITES_extract,by="CORE_ID")
+
+
+
+
+
+
+###note the slightly different header names in the 2024 document
 
 
 ### some simple linear models just to baseline
@@ -118,12 +182,25 @@ BD.model4 = lmer(BD ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPClass1+CaMPClass2+ECOPROV,d
 summary(BD.model4)
 anova(BD.model2,BD.model4)
 
+
+##############################
+#### New 2024 peat core dataset including permafrost and potentially ecozone
+############################
+
+BD.model2b.2024 = lmer(PeatC_dens ~ log(DEPTHCLASS)+TREED+(1|CORE_ID)+CaMPNutrient_2024+ECOZONE_NAME_EN,data=PROFILE_2024_w_site_info,REML=FALSE)
+summary(BD.model2b.2024)
+coef(BD.model2b.2024)
+
+
 #######################################
 ### end BD model selection/exploration
 #######################################
 
+
+
 ##########################################################################################
 ### leave one out (LOO) cross-validation and scatterplot of those results.  Use predict().
+### have not done for 2024 BD model yet
 #########################################################################################
 
 
@@ -171,15 +248,38 @@ library(ggplot2)
 
 ### just filling in the full parameter space of depth and tree/nutrient class with the above BD.model2
 
+##########################
+### 2024-06-26 edit: use dplyr to fill in parameter space of national peat compilation
+##########################
+
+
+
+### use dplyr's expand to get the full parameter space of ecozone * treed (Y/N/U), nutrient class and depth class < 20 (using filter() after)
+PeatParamSpace <- tibble(PROFILE_2024_w_site_info) %>% expand(ECOZONE_NAME_EN,TREED,CaMPNutrient_2024,DEPTHCLASS) %>% filter(DEPTHCLASS<=20) %>% drop_na(ECOZONE_NAME_EN) %>% drop_na(CaMPNutrient_2024)
+
+
 ### Fill in the std BD curves
-std <- array(0, c(221,1))
-for (i in seq(1:221)){
-  #BD.model.temp <- lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+CaMPTree+(1|YEAR),data=rbind(Zoltai[1:(i-1),],Zoltai[(i+1):n,]),REML=FALSE)
-  std[i,1] <- predict(BD.model2, newdata=Zoltai_std_curves_blank[i,])
+std <- array(NA, c(nrow(PeatParamSpace)))
+for (i in seq(1:nrow(PeatParamSpace))){
+#for (i in seq(1:1120)){
+  std[i] <- predict(BD.model2b.2024, newdata=PeatParamSpace[i,], re.form=~0)
 }
 
-### not run: one step to fill in new data?  Or loop needed?
-###std <- predict(BD.model2, newdata=Zoltai_std_curves)
+Peat_std_curves_long <- cbind(PeatParamSpace,std)
+
+colnames(Peat_std_curves_long)[5] <- c("PeatC_dens")
+
+#### then do the running sum along each parameter space instance until depthclass == 1
+
+Core_C_density <- array(NA, c(nrow(Peat_std_curves_long)))
+for (i in seq(1:nrow(Peat_std_curves_long))){
+  Core_C_density[i] <- ifelse(Peat_std_curves_long$DEPTHCLASS[i] == 1, Peat_std_curves_long$PeatC_dens[i]*1000*0.15,Core_C_density[i-1]+(Peat_std_curves_long$PeatC_dens[i]*1000*0.15))
+  
+}
+
+MIDDEPTH <- Peat_std_curves_long$DEPTHCLASS*15-7.5
+Peat_std_curves_long <- cbind(Peat_std_curves_long,Core_C_density,MIDDEPTH)
+
 
 
 ### write this if not already written
