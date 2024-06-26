@@ -1,12 +1,11 @@
 library(rpart)
 library(rpart.plot)
 ### Analysis of Zoltai BD data for CaMPS
-
+library(car)
 
 library(lme4)
 #library(cars)
-library(rpart)
-library(rpart.plot)
+
 
 #boxplot(MaxNDVI ~ Class,MaxNDVI_MDC)
 #summary(aov(MaxNDVI ~ Class,data=MaxNDVI_MDC))
@@ -45,6 +44,13 @@ MAE/mean(tree.for.model$BULK_DENSITY)
 #### linear mixed-effects model for bulk density ##############
 ################################################################
 
+### note this is using just the older Zoltai-only data, the newer Bauer et al 2024 national composite needs to be used now
+
+###https://open.canada.ca/data/dataset/e287b0dd-8b07-435b-8a76-0c7ec84ac228
+
+### the file PROFILES_2024.csv provided is from Bauer et al 2024
+
+
 ### some simple linear models just to baseline
 
 Zoltai.lm1 = lm(BD ~ log(MIDDEPTH)+CaMPTree+CaMPNutrient,data=Zoltai)
@@ -60,7 +66,7 @@ Zoltai$PeatC_dens <- as.numeric(Zoltai$PeatC_dens)
 BD.null = lmer(PeatC_dens ~ log(DEPTHCLASS)+(1|CONCAT),data=Zoltai,REML=FALSE)
 summary(BD.null)
 
-BD.model1 = lmer(PeatC_dens ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPClass1,data=Zoltai,REML=FALSE)
+BD.model1 = lmer(PeatC_dens ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPTree,data=Zoltai,REML=FALSE)
 summary(BD.model1)
 anova(BD.null,BD.model1)
 
@@ -73,10 +79,13 @@ BD.model2a = lmer(PeatC_dens ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPTree+CaMPNutrient,
 ### CONCAT is the concatenation of YEAR, SITE, and SUBSITE into a unique string for each core
 ### CaMPClass 1 
 
+### note that the lmer is used here for completeness 
 
-#### try a version of the data with no swamps at all
-BD.model2c = lmer(PeatC_dens ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPTree*CaMPNutrient,data=Zoltai_no_swamp,REML=FALSE)
-summary(BD.model2c)
+
+
+#### #not run: try a version of the data with no swamps at all
+#BD.model2c = lmer(PeatC_dens ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPTree*CaMPNutrient,data=Zoltai_no_swamp,REML=FALSE)
+#summary(BD.model2c)
 
 
 BD.model2b = lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPTree)+(1|CONCAT)+CaMPNutrient+(1|YEAR),data=Zoltai,REML=FALSE)
@@ -88,16 +97,35 @@ BD.model2c = lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+(1+lo
 
 #### Go with this one now....  Same AIC as 2B above
 BD.model2 = lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+CaMPTree+(1|YEAR),data=Zoltai,REML=FALSE)
+
+
 BD.model2e = lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+CaMPTree+(1|YEAR)+ECOREGION,data=Zoltai,REML=FALSE)
+
 summary(BD.model2)
-anova(BD.model2,BD.model2e)
+#anova(BD.model2,BD.model2e)
 ranef(BD.model2)
 fixef(BD.model2)
 coef(BD.model2)
 
-### TO DO: leave one out (LOO) cross-validation and scatterplot of those results.  Use predict().
+### too much noise for interaction
+BD.model3 = lmer(BD ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPClass1*CaMPClass2,data=Zoltai,REML=FALSE)
+summary(BD.model3)
+anova(BD.model2,BD.model3)
+coef(BD.model3)
 
-#Then: create "standard" BD curves per 9 class + swamp by depth using predict.
+### add in ecozone and MAT, no improvement
+BD.model4 = lmer(BD ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPClass1+CaMPClass2+ECOPROV,data=Zoltai,REML=FALSE)
+summary(BD.model4)
+anova(BD.model2,BD.model4)
+
+#######################################
+### end BD model selection/exploration
+#######################################
+
+##########################################################################################
+### leave one out (LOO) cross-validation and scatterplot of those results.  Use predict().
+#########################################################################################
+
 
 Zoltai[1,]
 
@@ -130,36 +158,43 @@ abline(0,1)
 library(ggplot2)
 
 
+###option to write out the outputs of the Linear Mixed Effect Model on a leave-one-out basis in order to assess the LME accuracy with a simple 1:1 biplot
+###write.csv(Z,"LME_pred_Vs_obs.csv")
 
-write.csv(Z,"LME_pred_Vs_obs.csv")
+########################################################################
+#create "standard" BD curves per 9 class + swamp by depth using predict.
+########################################################################
+
+### right now, only using the Zoltai data, need to update to the newer national composite:
+
+### 221 represents the number of cores in the Zoltai data
+
+### just filling in the full parameter space of depth and tree/nutrient class with the above BD.model2
 
 ### Fill in the std BD curves
 std <- array(0, c(221,1))
 for (i in seq(1:221)){
   #BD.model.temp <- lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+CaMPTree+(1|YEAR),data=rbind(Zoltai[1:(i-1),],Zoltai[(i+1):n,]),REML=FALSE)
-  std[i,1] <- predict(BD.model2, newdata=Zoltai_std_curves[i,])
+  std[i,1] <- predict(BD.model2, newdata=Zoltai_std_curves_blank[i,])
 }
 
-### one step to fill in new data?  Or loop needed?
-std <- predict(BD.model2, newdata=Zoltai_std_curves)
-
-write.csv(std,"std_curves_output.csv")
+### not run: one step to fill in new data?  Or loop needed?
+###std <- predict(BD.model2, newdata=Zoltai_std_curves)
 
 
+### write this if not already written
+##write.csv(std,"std_curves_output.csv")
 
-### too much noise for interaction
-BD.model3 = lmer(BD ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPClass1*CaMPClass2,data=Zoltai,REML=FALSE)
-summary(BD.model3)
-anova(BD.model2,BD.model3)
-coef(BD.model3)
+#### ! not shown: summing up the sample-level gC/cm3 BD predictions into a kgC/m2 sum of C as one goes downward through the depth classes
 
-### add in ecozone and MAT, no improvement
-BD.model4 = lmer(BD ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPClass1+CaMPClass2+ECOPROV,data=Zoltai,REML=FALSE)
-summary(BD.model4)
-anova(BD.model2,BD.model4)
+### the fields being "PeatC_dens" for the instant gap-fill and "Core_C_density" for the cumulative
+
+### (this is what is shown in Zoltai_std_curves_long.csv though)
+
+
 
 ################################
-### Graphing and curve fitting
+### Graphing and curve fitting, as seen in Bona et al 2020
 ################################
 library(ggplot2)
 library(nls2)
@@ -179,9 +214,13 @@ ggplot(Zoltai_core_compare, aes(Obs_C_density_total,Pred_C_Density_total, colour
 ### plot the obs-pred 1m C density
 ggplot(Zoltai_core_compare, aes(Obs_C_Density_1m,Pred_C_Density_1m, colour=CaMPClass))+geom_point(size=2)+ scale_colour_manual(values=Palette1) + geom_abline(intercept = 0, slope = 1)
 
-## curve fitting
+## curve fitting as seen in the Bona et al 2020 paper: http://www.sciencedirect.com/science/article/pii/S0304380020302350
 ## instantaneous C density: c*ln(depth from surface cm)-d
+
+## NB! need to change CaMPClass manually each time here, not looping throuht (but could for a more complete document)
 peatdata <- subset(Zoltai_std_curves_long, CaMPClass=="open poor fen")
+### !!
+
 attach(peatdata)
 peatfit_inst <- nls2(PeatC_dens~c*log(MIDDEPTH)-d,data=peatdata,start=list(c=0.012,d=0.0035))
 peatfit_cumul <- nls2(Core_C_density~a*(MIDDEPTH)^b,data=peatdata,start=list(a=0.3,b=1.03))
@@ -190,7 +229,14 @@ summary(peatfit_cumul)
 summary(peatfit_inst)
 
 
+##############################
+#### end curve fitting
+#############################
 
+
+##############################################################################
+#### Misc summary stats
+#############################################################################
 
 #### attach max depth data from each core to CampClass and lat/long/ecozone
 Samples <- read.csv("~/CaMP-Calcs/Samples.csv")
@@ -224,9 +270,18 @@ ggplot(Samples_w_loc_csv_v2, aes(ECOZONE, MaxDepth)) + geom_boxplot() + geom_jit
 ### ecdf
 ggplot(Samples_w_ecozones_3978, aes(MaxDepth, colour = ECOZONE)) + stat_ecdf() + ylab("Percentile of Zoltai cores") + xlab("Peat Depth per core (cm)")
 
+
+############################
+### end misc stats
+###########################
+
+
+
+########################################################################################
 ### comprehensive regression tree models for density and CTOT Feb 2020
 ### Using updated dataset Feb 2021 from Ilka
 #library("rpart.plot", lib.loc="~/R/win-library/3.4")
+########################################################################################
 
 PROFILESFeb3 <-  read.csv("~/CaMP-Calcs/PROFILES_Feb2021.csv", stringsAsFactors=TRUE)
 

@@ -1,0 +1,241 @@
+CaMPTree	CaMPNutrient	CaMPClass	MIDDEPTH	DEPTHCLASS	PeatC_dens	Core_C_density
+forested	bog	forested bog	7.5	1	0.025	3.7
+forested	bog	forested bog	22.5	2	0.035	8.9
+forested	bog	forested bog	37.5	3	0.041	15.0
+forested	bog	forested bog	52.5	4	0.045	21.8
+forested	bog	forested bog	67.5	5	0.049	29.1
+forested	bog	forested bog	82.5	6	0.051	36.8
+forested	bog	forested bog	97.5	7	0.054	44.8
+forested	bog	forested bog	112.5	8	0.056	53.2
+forested	bog	forested bog	127.5	9	0.057	61.8
+forested	bog	forested bog	142.5	10	0.059	70.6
+forested	bog	forested bog	157.5	11	0.060	79.6
+forested	bog	forested bog	172.5	12	0.062	88.9
+forested	bog	forested bog	187.5	13	0.063	98.3
+forested	bog	forested bog	202.5	14	0.064	107.9
+forested	bog	forested bog	217.5	15	0.065	117.6
+forested	bog	forested bog	232.5	16	0.066	127.5
+forested	bog	forested bog	247.5	17	0.067	137.5
+forested	bog	forested bog	262.5	18	0.068	147.7
+forested	bog	forested bog	277.5	19	0.068	157.9
+forested	bog	forested bog	292.5	20	0.069	168.3
+treed	bog	treed bog	7.5	1	0.022	3.3
+treed	bog	treed bog	22.5	2	0.033	8.3
+treed	bog	treed bog	37.5	3	0.039	14.1
+treed	bog	treed bog	52.5	4	0.043	20.5
+treed	bog	treed bog	67.5	5	0.046	27.5
+treed	bog	treed bog	82.5	6	0.049	34.8
+treed	bog	treed bog	97.5	7	0.051	42.5
+treed	bog	treed bog	112.5	8	0.053	50.5
+treed	bog	treed bog	127.5	9	0.055	58.8
+treed	bog	treed bog	142.5	10	0.057	67.3
+treed	bog	treed bog	157.5	11	0.058	76.0
+treed	bog	treed bog	172.5	12	0.059	84.9
+treed	bog	treed bog	187.5	13	0.061	94.0
+treed	bog	treed bog	202.5	14	0.062	103.3
+treed	bog	treed bog	217.5	15	0.063	112.7
+treed	bog	treed bog	232.5	16	0.064	122.3
+treed	bog	treed bog	247.5	17	0.065	131.9
+treed	bog	treed bog	262.5	18	0.065	141.8
+treed	bog	treed bog	277.5	19	0.066	151.7
+treed	bog	treed bog	292.5	20	0.067	161.8
+open	bog	open bog	7.5	1	0.020	2.9
+open	bog	open bog	22.5	2	0.030	7.4
+open	bog	open bog	37.5	3	0.036	12.8
+open	bog	open bog	52.5	4	0.040	18.8
+open	bog	open bog	67.5	5	0.044	25.4
+open	bog	open bog	82.5	6	0.046	32.3
+open	bog	open bog	97.5	7	0.049	39.6
+open	bog	open bog	112.5	8	0.051	47.2
+open	bog	open bog	127.5	9	0.052	55.0
+open	bog	open bog	142.5	10	0.054	63.1
+open	bog	open bog	157.5	11	0.055	71.4
+open	bog	open bog	172.5	12	0.057	79.9
+open	bog	open bog	187.5	13	0.058	88.5
+open	bog	open bog	202.5	14	0.059	97.4
+open	bog	open bog	217.5	15	0.060	106.4
+open	bog	open bog	232.5	16	0.061	115.5
+open	bog	open bog	247.5	17	0.062	124.8
+open	bog	open bog	262.5	18	0.063	134.2
+open	bog	open bog	277.5	19	0.063	143.7
+open	bog	open bog	292.5	20	0.064	153.3
+open	bog	open bog	7.5	1	0.020	2.9
+open	bog	open bog	22.5	2	0.030	7.4
+open	bog	open bog	37.5	3	0.036	12.8
+open	bog	open bog	52.5	4	0.040	18.8
+open	bog	open bog	67.5	5	0.044	25.4
+open	bog	open bog	82.5	6	0.046	32.3
+open	bog	open bog	97.5	7	0.049	39.6
+open	bog	open bog	112.5	8	0.051	47.2
+open	bog	open bog	127.5	9	0.052	55.0
+open	bog	open bog	142.5	10	0.054	63.1
+open	bog	open bog	157.5	11	0.055	71.4
+open	bog	open bog	172.5	12	0.057	79.9
+open	bog	open bog	187.5	13	0.058	88.5
+open	bog	open bog	202.5	14	0.059	97.4
+open	bog	open bog	217.5	15	0.060	106.4
+open	bog	open bog	232.5	16	0.061	115.5
+open	bog	open bog	247.5	17	0.062	124.8
+open	bog	open bog	262.5	18	0.063	134.2
+open	bog	open bog	277.5	19	0.063	143.7
+open	bog	open bog	292.5	20	0.064	153.3
+treed	poor fen	treed poor fen	7.5	1	0.031	4.6
+treed	poor fen	treed poor fen	22.5	2	0.038	10.3
+treed	poor fen	treed poor fen	37.5	3	0.042	16.6
+treed	poor fen	treed poor fen	52.5	4	0.045	23.4
+treed	poor fen	treed poor fen	67.5	5	0.047	30.5
+treed	poor fen	treed poor fen	82.5	6	0.049	37.9
+treed	poor fen	treed poor fen	97.5	7	0.051	45.6
+treed	poor fen	treed poor fen	112.5	8	0.052	53.4
+treed	poor fen	treed poor fen	127.5	9	0.054	61.5
+treed	poor fen	treed poor fen	142.5	10	0.055	69.7
+treed	poor fen	treed poor fen	157.5	11	0.056	78.0
+treed	poor fen	treed poor fen	172.5	12	0.057	86.5
+treed	poor fen	treed poor fen	187.5	13	0.057	95.1
+treed	poor fen	treed poor fen	202.5	14	0.058	103.9
+treed	poor fen	treed poor fen	217.5	15	0.059	112.7
+treed	poor fen	treed poor fen	232.5	16	0.060	121.7
+treed	poor fen	treed poor fen	247.5	17	0.060	130.7
+treed	poor fen	treed poor fen	262.5	18	0.061	139.9
+treed	poor fen	treed poor fen	277.5	19	0.061	149.1
+treed	poor fen	treed poor fen	292.5	20	0.062	158.4
+open	poor fen	open poor fen	7.5	1	0.028	4.2
+open	poor fen	open poor fen	22.5	2	0.035	9.4
+open	poor fen	open poor fen	37.5	3	0.039	15.3
+open	poor fen	open poor fen	52.5	4	0.042	21.7
+open	poor fen	open poor fen	67.5	5	0.045	28.4
+open	poor fen	open poor fen	82.5	6	0.047	35.4
+open	poor fen	open poor fen	97.5	7	0.048	42.6
+open	poor fen	open poor fen	112.5	8	0.050	50.0
+open	poor fen	open poor fen	127.5	9	0.051	57.7
+open	poor fen	open poor fen	142.5	10	0.052	65.4
+open	poor fen	open poor fen	157.5	11	0.053	73.4
+open	poor fen	open poor fen	172.5	12	0.054	81.5
+open	poor fen	open poor fen	187.5	13	0.055	89.7
+open	poor fen	open poor fen	202.5	14	0.055	98.0
+open	poor fen	open poor fen	217.5	15	0.056	106.4
+open	poor fen	open poor fen	232.5	16	0.057	114.9
+open	poor fen	open poor fen	247.5	17	0.057	123.5
+open	poor fen	open poor fen	262.5	18	0.058	132.3
+open	poor fen	open poor fen	277.5	19	0.059	141.0
+open	poor fen	open poor fen	292.5	20	0.059	149.9
+forested	poor fen	forested poor fen	7.5	1	0.033	4.9
+forested	poor fen	forested poor fen	22.5	2	0.040	10.9
+forested	poor fen	forested poor fen	37.5	3	0.044	17.6
+forested	poor fen	forested poor fen	52.5	4	0.047	24.7
+forested	poor fen	forested poor fen	67.5	5	0.050	32.1
+forested	poor fen	forested poor fen	82.5	6	0.052	39.9
+forested	poor fen	forested poor fen	97.5	7	0.053	47.9
+forested	poor fen	forested poor fen	112.5	8	0.055	56.0
+forested	poor fen	forested poor fen	127.5	9	0.056	64.4
+forested	poor fen	forested poor fen	142.5	10	0.057	73.0
+forested	poor fen	forested poor fen	157.5	11	0.058	81.6
+forested	poor fen	forested poor fen	172.5	12	0.059	90.5
+forested	poor fen	forested poor fen	187.5	13	0.060	99.4
+forested	poor fen	forested poor fen	202.5	14	0.060	108.5
+forested	poor fen	forested poor fen	217.5	15	0.061	117.7
+forested	poor fen	forested poor fen	232.5	16	0.062	126.9
+forested	poor fen	forested poor fen	247.5	17	0.062	136.3
+forested	poor fen	forested poor fen	262.5	18	0.063	145.8
+forested	poor fen	forested poor fen	277.5	19	0.064	155.3
+forested	poor fen	forested poor fen	292.5	20	0.064	164.9
+forested	rich fen	forested rich fen	7.5	1	0.040	6.0
+forested	rich fen	forested rich fen	22.5	2	0.046	12.9
+forested	rich fen	forested rich fen	37.5	3	0.050	20.5
+forested	rich fen	forested rich fen	52.5	4	0.053	28.4
+forested	rich fen	forested rich fen	67.5	5	0.055	36.7
+forested	rich fen	forested rich fen	82.5	6	0.057	45.2
+forested	rich fen	forested rich fen	97.5	7	0.058	53.9
+forested	rich fen	forested rich fen	112.5	8	0.060	62.9
+forested	rich fen	forested rich fen	127.5	9	0.061	72.0
+forested	rich fen	forested rich fen	142.5	10	0.062	81.2
+forested	rich fen	forested rich fen	157.5	11	0.063	90.6
+forested	rich fen	forested rich fen	172.5	12	0.063	100.1
+forested	rich fen	forested rich fen	187.5	13	0.064	109.7
+forested	rich fen	forested rich fen	202.5	14	0.065	119.5
+forested	rich fen	forested rich fen	217.5	15	0.066	129.3
+forested	rich fen	forested rich fen	232.5	16	0.066	139.2
+forested	rich fen	forested rich fen	247.5	17	0.067	149.2
+forested	rich fen	forested rich fen	262.5	18	0.067	159.3
+forested	rich fen	forested rich fen	277.5	19	0.068	169.5
+forested	rich fen	forested rich fen	292.5	20	0.068	179.7
+treed	rich fen	treed rich fen	7.5	1	0.038	5.6
+treed	rich fen	treed rich fen	22.5	2	0.044	12.3
+treed	rich fen	treed rich fen	37.5	3	0.048	19.5
+treed	rich fen	treed rich fen	52.5	4	0.051	27.1
+treed	rich fen	treed rich fen	67.5	5	0.053	35.0
+treed	rich fen	treed rich fen	82.5	6	0.055	43.2
+treed	rich fen	treed rich fen	97.5	7	0.056	51.6
+treed	rich fen	treed rich fen	112.5	8	0.057	60.2
+treed	rich fen	treed rich fen	127.5	9	0.058	69.0
+treed	rich fen	treed rich fen	142.5	10	0.059	77.9
+treed	rich fen	treed rich fen	157.5	11	0.060	87.0
+treed	rich fen	treed rich fen	172.5	12	0.061	96.2
+treed	rich fen	treed rich fen	187.5	13	0.062	105.5
+treed	rich fen	treed rich fen	202.5	14	0.063	114.9
+treed	rich fen	treed rich fen	217.5	15	0.063	124.4
+treed	rich fen	treed rich fen	232.5	16	0.064	133.9
+treed	rich fen	treed rich fen	247.5	17	0.065	143.6
+treed	rich fen	treed rich fen	262.5	18	0.065	153.4
+treed	rich fen	treed rich fen	277.5	19	0.066	163.2
+treed	rich fen	treed rich fen	292.5	20	0.066	173.1
+open	rich fen	open rich fen	7.5	1	0.035	5.2
+open	rich fen	open rich fen	22.5	2	0.041	11.4
+open	rich fen	open rich fen	37.5	3	0.045	18.2
+open	rich fen	open rich fen	52.5	4	0.048	25.4
+open	rich fen	open rich fen	67.5	5	0.050	32.9
+open	rich fen	open rich fen	82.5	6	0.052	40.7
+open	rich fen	open rich fen	97.5	7	0.053	48.7
+open	rich fen	open rich fen	112.5	8	0.055	56.9
+open	rich fen	open rich fen	127.5	9	0.056	65.2
+open	rich fen	open rich fen	142.5	10	0.057	73.7
+open	rich fen	open rich fen	157.5	11	0.058	82.3
+open	rich fen	open rich fen	172.5	12	0.058	91.1
+open	rich fen	open rich fen	187.5	13	0.059	100.0
+open	rich fen	open rich fen	202.5	14	0.060	108.9
+open	rich fen	open rich fen	217.5	15	0.061	118.0
+open	rich fen	open rich fen	232.5	16	0.061	127.2
+open	rich fen	open rich fen	247.5	17	0.062	136.4
+open	rich fen	open rich fen	262.5	18	0.062	145.8
+open	rich fen	open rich fen	277.5	19	0.063	155.2
+open	rich fen	open rich fen	292.5	20	0.063	164.7
+forested	swamp	forested swamp	7.5	1	0.041	6.1
+forested	swamp	forested swamp	22.5	2	0.050	13.6
+forested	swamp	forested swamp	37.5	3	0.055	21.8
+forested	swamp	forested swamp	52.5	4	0.059	30.6
+forested	swamp	forested swamp	67.5	5	0.062	39.9
+forested	swamp	forested swamp	82.5	6	0.064	49.5
+forested	swamp	forested swamp	97.5	7	0.066	59.4
+forested	swamp	forested swamp	112.5	8	0.068	69.6
+forested	swamp	forested swamp	127.5	9	0.069	80.0
+forested	swamp	forested swamp	142.5	10	0.071	90.6
+forested	swamp	forested swamp	157.5	11	0.072	101.4
+forested	swamp	forested swamp	172.5	12	0.073	112.3
+forested	swamp	forested swamp	187.5	13	0.074	123.5
+forested	swamp	forested swamp	202.5	14	0.075	134.7
+forested	swamp	forested swamp	217.5	15	0.076	146.1
+forested	swamp	forested swamp	232.5	16	0.077	157.6
+forested	swamp	forested swamp	247.5	17	0.078	169.3
+forested	swamp	forested swamp	262.5	18	0.078	181.0
+forested	swamp	forested swamp	277.5	19	0.079	192.9
+forested	swamp	forested swamp	292.5	20	0.080	204.8
+treed	swamp	treed swamp	7.5	1	0.039	5.8
+treed	swamp	treed swamp	22.5	2	0.048	12.9
+treed	swamp	treed swamp	37.5	3	0.053	20.8
+treed	swamp	treed swamp	52.5	4	0.057	29.3
+treed	swamp	treed swamp	67.5	5	0.059	38.3
+treed	swamp	treed swamp	82.5	6	0.062	47.5
+treed	swamp	treed swamp	97.5	7	0.064	57.1
+treed	swamp	treed swamp	112.5	8	0.066	67.0
+treed	swamp	treed swamp	127.5	9	0.067	77.0
+treed	swamp	treed swamp	142.5	10	0.069	87.3
+treed	swamp	treed swamp	157.5	11	0.070	97.8
+treed	swamp	treed swamp	172.5	12	0.071	108.4
+treed	swamp	treed swamp	187.5	13	0.072	119.2
+treed	swamp	treed swamp	202.5	14	0.073	130.1
+treed	swamp	treed swamp	217.5	15	0.074	141.2
+treed	swamp	treed swamp	232.5	16	0.075	152.4
+treed	swamp	treed swamp	247.5	17	0.075	163.7
+treed	swamp	treed swamp	262.5	18	0.076	175.1
+treed	swamp	treed swamp	277.5	19	0.077	186.6
+treed	swamp	treed swamp	292.5	20	0.078	198.3
