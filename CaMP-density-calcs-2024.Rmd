@@ -181,17 +181,23 @@ levels(CORESITES_2024$CWCS_FORM)
 ### split into poor and rich fens
 CORESITES_2024$CaMPNutrient_2024 <- case_when(
   CORESITES_2024$CWCS_FORM == "palsa" | CORESITES_2024$CWCS_FORM == "peat plateau" | CORESITES_2024$CWCS_FORM == "polygonal peat plateau" | CORESITES_2024$CWCS_FORM == "plateau : northern plateau" ~ "permafrost",
+  CORESITES_2024$CWCS_CLASS == "" & CORESITES_2024$PERMAFROST == "Y" ~ "permafrost",
   CORESITES_2024$CWCS_CLASS == "bog" ~ "bog",
-  CORESITES_2024$CWCS_CLASS == "marsh" ~ "marsh",
   CORESITES_2024$CWCS_CLASS == "swamp" ~ "swamp",
   CORESITES_2024$CWCS_CLASS == "fen" & CORESITES_2024$FEN_TYPE == "poor" ~ "poor fen",
   CORESITES_2024$CWCS_CLASS == "fen" & CORESITES_2024$FEN_TYPE != "poor" ~ "rich fen",
-  .default = as.character(NA)
+  .default = NA_character_
 ) 
 
-### then filter out NA values
+##not sure why it didn't work above in the pipe, but doing it alone here
+CORESITES_2024 <- CORESITES_2024 %>% drop_na(CaMPNutrient_2024)
 
-###%>% filter(CaMPNutrient_2024 != "NONE") 
+
+### count the number of unclassified ones
+
+### then filter out any unclassified remaining values
+
+### 
 
 CORESITES_2024$CaMPNutrient_2024 <- as.factor(CORESITES_2024$CaMPNutrient_2024)
 
@@ -440,6 +446,11 @@ CORESITES_2024 %>%
 CORESITES_2024 %>%
    group_by(ECOZONE_NAME_EN,CaMPNutrient_2024,TREED,PROV_TERR) %>%
    summarise(ORG_DEPTH = median(ORG_DEPTH), n = n())
+
+
+###really, need to do a CaMPNutrient * Ecozone grid for sample size, then median org depth, then Mg/ha, so three tables
+
+
 
 
 ############################
