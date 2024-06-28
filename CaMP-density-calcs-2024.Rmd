@@ -307,13 +307,15 @@ library(ggplot2)
 
 
 
-### use dplyr's expand to get the full parameter space of ecozone * treed (Y/N/U), nutrient class and depth class < 20 (using filter() after)
-PeatParamSpace <- tibble(PROFILE_2024_w_site_info) %>% expand(ECOZONE_NAME_EN,TREED,CaMPNutrient_2024,DEPTHCLASS) %>% filter(DEPTHCLASS<=20) %>% drop_na(ECOZONE_NAME_EN) %>% drop_na(CaMPNutrient_2024) 
+### use dplyr's expand to get the !full! parameter space of ecozone * treed (Y/N/U), nutrient class and depth class < 20 (using filter() after)
+#PeatParamSpace <- tibble(PROFILE_2024_w_site_info) %>%expand(ECOZONE_NAME_EN,TREED,CaMPNutrient_2024,DEPTHCLASS) %>% filter(DEPTHCLASS<=20) %>% drop_na(ECOZONE_NAME_EN) %>% drop_na(CaMPNutrient_2024) 
 
 
-### this version uses nesting() instead of expand(), so only expands to the parameter space where we have data (ecozone * treed * nutrient class)
+### this version uses nesting() instead of expand(), so only expands to the parameter space where we have data (ecozone * treed * nutrient class) and all depth classes up to 20 (3.0m)
 ### not working at the moment
-#PeatParamSpace <- tibble(PROFILE_2024_w_site_info) %>% expand(PROFILE_2024_w_site_info,nesting(ECOZONE_NAME_EN,TREED,CaMPNutrient_2024,DEPTHCLASS),.name_repair = "universal") %>% filter(DEPTHCLASS<=20) %>% drop_na(ECOZONE_NAME_EN) %>% drop_na(CaMPNutrient_2024) 
+PeatParamSpace <- tibble(PROFILE_2024_w_site_info) %>%expand(nesting(ECOZONE_NAME_EN,CaMPNutrient_2024,TREED,.name_repair = "universal"),DEPTHCLASS)
+
+PeatParamSpace <- PeatParamSpace %>% filter(DEPTHCLASS<=20) %>% drop_na(ECOZONE_NAME_EN) %>% drop_na(CaMPNutrient_2024) 
 
 
 ### Fill in the std BD curves
@@ -378,7 +380,7 @@ Palette1 <- c("#0a4b32","#6a917b","#aad7bf","#5c5430","#aba476","#fbfabc","#7926
 ### down to 3m, using nutrient only
 
 ### single ecozone
-ggplot(subset(Peat_std_curves_long,ECOZONE_NAME_EN == "Taiga Plains"), aes(Core_C_density,MIDDEPTH, colour=CaMPNutrient_2024))+geom_smooth(size=1.5) + ylim(300,0) + xlim(0,250) + labs(x = "Core Carbon density kg m^-2", y = "Depth from surface (cm)") #+ facet_grid(rows = vars(ECOZONE_NAME_EN))
+ggplot(subset(Peat_std_curves_long,ECOZONE_NAME_EN == "Taiga Plains"), aes(Core_C_density,MIDDEPTH, colour=CaMPNutrient_2024))+geom_smooth(size=1.5) + ylim(300,0) + xlim(0,250) + labs(x = "Core Carbon density kg m^-2", y = "Depth from surface (cm)") + labs(title="example Taiga Plains ecozone-specific density curves") #+ facet_grid(rows = vars(ECOZONE_NAME_EN))
 
 ###all ecozones in a facet
 ggplot(Peat_std_curves_long, aes(Core_C_density,MIDDEPTH, colour=CaMPNutrient_2024))+geom_smooth(size=1.5) + ylim(300,0) + xlim(0,250) + labs(x = "Core Carbon density kg m^-2", y = "Depth from surface (cm)") + facet_grid(rows = vars(ECOZONE_NAME_EN))
@@ -450,7 +452,7 @@ CORESITES_2024 %>%
 
 ###really, need to do a CaMPNutrient * Ecozone grid for sample size, then median org depth, then Mg/ha, so three tables
 
-
+### will have to do that manually and fill in a data frame that way in a loop, awkward but can't see any pre-baked functions otherwise.
 
 
 ############################
