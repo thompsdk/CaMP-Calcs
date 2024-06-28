@@ -146,6 +146,11 @@ anova(BD.model2,BD.model4)
 #### linear mixed-effects model for bulk density ##############
 ################################################################
 
+
+### ecozones available at https://open.canada.ca/data/dataset/7ad7ea01-eb23-4824-bccc-66adb7c5bdf8
+
+# or direct link https://agriculture.canada.ca/atlas/data_donnees/nationalEcologicalFramework/data_donnees/geoJSON/ez/nef_ca_ter_ecozone_v2_2.geojson
+
 ### note this is using just the older Zoltai-only data, the newer Bauer et al 2024 national composite needs to be used now
 
 ###https://open.canada.ca/data/dataset/e287b0dd-8b07-435b-8a76-0c7ec84ac228
@@ -180,8 +185,9 @@ levels(CORESITES_2024$CWCS_FORM)
 
 ### split into poor and rich fens
 CORESITES_2024$CaMPNutrient_2024 <- case_when(
-  CORESITES_2024$CWCS_FORM == "palsa" | CORESITES_2024$CWCS_FORM == "peat plateau" | CORESITES_2024$CWCS_FORM == "polygonal peat plateau" | CORESITES_2024$CWCS_FORM == "plateau : northern plateau" ~ "permafrost",
+  CORESITES_2024$CWCS_FORM == "palsa" | CORESITES_2024$CWCS_FORM == "peat plateau" | CORESITES_2024$CWCS_FORM == "polygonal peat plateau" | CORESITES_2024$CWCS_FORM == "lowland polygon" | CORESITES_2024$CWCS_FORM == "plateau : northern plateau" ~ "permafrost",
   CORESITES_2024$CWCS_CLASS == "" & CORESITES_2024$PERMAFROST == "Y" ~ "permafrost",
+   CORESITES_2024$CWCS_CLASS == "fen" & CORESITES_2024$PERMAFROST == "Y" ~ "permafrost",
   CORESITES_2024$CWCS_CLASS == "bog" ~ "bog",
   CORESITES_2024$CWCS_CLASS == "swamp" ~ "swamp",
   CORESITES_2024$CWCS_CLASS == "fen" & CORESITES_2024$FEN_TYPE == "poor" ~ "poor fen",
@@ -315,6 +321,8 @@ library(ggplot2)
 ### not working at the moment
 PeatParamSpace <- tibble(PROFILE_2024_w_site_info) %>%expand(nesting(ECOZONE_NAME_EN,CaMPNutrient_2024,TREED,.name_repair = "universal"),DEPTHCLASS)
 
+
+###only looking at top 3m
 PeatParamSpace <- PeatParamSpace %>% filter(DEPTHCLASS<=20) %>% drop_na(ECOZONE_NAME_EN) %>% drop_na(CaMPNutrient_2024) 
 
 
@@ -344,8 +352,6 @@ Peat_std_curves_long <- cbind(Peat_std_curves_long,Core_C_density,MIDDEPTH)
 
 ### write this if not already written
 ##write.csv(std,"std_curves_output.csv")
-
-#### ! not shown: summing up the sample-level gC/cm3 BD predictions into a kgC/m2 sum of C as one goes downward through the depth classes
 
 ### the fields being "PeatC_dens" for the instant gap-fill and "Core_C_density" for the cumulative
 
@@ -448,6 +454,19 @@ CORESITES_2024 %>%
 CORESITES_2024 %>%
    group_by(ECOZONE_NAME_EN,CaMPNutrient_2024,TREED,PROV_TERR) %>%
    summarise(ORG_DEPTH = median(ORG_DEPTH), n = n())
+
+CORESITES_2024  %>%
+   group_by(CaMPNutrient_2024,PERMAFROST)  %>%
+   summarise(ACTIVE_DPT = mean(ACTIVE_DPT,na.rm=TRUE), n = n(), MODAL_SMPL_MONTH = median(SAMPLING_MONTH,na.rm=TRUE))
+
+CORESITES_2024  %>%
+   filter(CWCS_CLASS == "fen" & PERMAFROST == "Y")  %>% group_by(ECOZONE_NAME_EN) %>%
+   summarise(n = n())
+
+
+CORESITES_2024  %>%
+   group_by(CWCS_FORM,PERMAFROST)  %>%
+   summarise(Mean_BD = mean(ORG_C_MGHA/ORG_DEPTH,na.rm=TRUE), n = n())
 
 
 ###really, need to do a CaMPNutrient * Ecozone grid for sample size, then median org depth, then Mg/ha, so three tables
