@@ -20,6 +20,8 @@ library(dplyr)
 library(tidyverse)
 library(ggplot2)
 library(nls2)
+library(gslnls) # see https://www.openanalytics.eu/blog/2022/05/17/new-nonlinear-ls-solvers-in-r/ for use case in gslnls
+library(broom)
 ```
 
 ## Header 1
@@ -209,6 +211,9 @@ CORESITES_2024$CaMPNutrient_2024 <- as.factor(CORESITES_2024$CaMPNutrient_2024)
 
 levels(CORESITES_2024$CaMPNutrient_2024)
 levels(CORESITES_2024$ECOZONE_NAME_EN)
+
+### convert provided ecozone names into camel string for ease of analysis later on
+CORESITES_2024$ECOZONE_NAME_EN <- str_replace_all(CORESITES_2024$ECOZONE_NAME_EN, " ", "")
 
 ### right now using the provided "TREED" Y/N field, but could also go back in time with SCANFI and get the tree canopy cover at the time of sampling where it is not otherwise provided
 
@@ -408,24 +413,57 @@ ggplot(Peat_std_curves_long, aes(Core_C_density,MIDDEPTH, colour=CaMPNutrient_20
 ```{r BD-curve-fitting, echo=FALSE, message=FALSE, warning=FALSE}
 
 
-## curve fitting as seen in the Bona et al 2020 paper: http://www.sciencedirect.com/science/article/pii/S0304380020302350
-## instantaneous C density: c*ln(depth from surface cm)-d
 
-## NB! need to change CaMPClass manually each time here, not looping throuht (but could for a more complete document)
-peatdata <- subset(Zoltai_std_curves_long, CaMPClass=="open poor fen")
-### !!
 
-attach(peatdata)
-peatfit_inst <- nls2(PeatC_dens~c*log(MIDDEPTH)-d,data=peatdata,start=list(c=0.012,d=0.0035))
-peatfit_cumul <- nls2(Core_C_density~a*(MIDDEPTH)^b,data=peatdata,start=list(a=0.3,b=1.03))
-detach(peatdata)
-summary(peatfit_cumul)
-summary(peatfit_inst)
+
+
+Peat_std_curves_long <- Peat_std_curves_long %>% mutate(UniquePeatCombo = paste0(ECOZONE_NAME_EN,"-",CaMPNutrient_2024)) 
+
+UniquePeatComboList <- unique(PeatParamSpace$UniquePeatCombo)
+
+
+### inspiration for dplyr curve fitting: https://douglas-watson.github.io/post/2018-09_dplyr_curve_fitting/
+
+fitted <- Peat_std_curves_long  %>% 
+  nest(-UniquePeatCombo) %>% 
+  mutate(
+     fit = map(data, ~ gsl_nls(Core_C_density~a*(MIDDEPTH)^b,start=list(a=0.3,b=1.03),data = .)),
+  )
+fitted
+
+
+PeatDatabase_2024_BD_curve_fit <- fitted %>% 
+  mutate(tidied = map(fit, tidy)) %>% 
+  unnest(tidied)
+
+PeatDatabase_2024_BD_curve_fit <- PeatDatabase_2024_BD_curve_fit %>% select(UniquePeatCombo, term, estimate)
 
 
 ##############################
 #### end curve fitting
 #############################
+
+
+## curve fitting as seen in the Bona et al 2020 paper: http://www.sciencedirect.com/science/article/pii/S0304380020302350
+## instantaneous C density: c*ln(depth from surface cm)-d
+
+
+## NB! need to change CaMPClass manually each time here, not looping throuht (but could for a more complete document)
+peatdata <- subset(Zoltai_std_curves_long, CaMPClass=="open poor fen")
+### !!
+
+
+
+
+attach(peatdata)
+peatfit_inst <- gsl_nls(PeatC_dens~c*log(MIDDEPTH)-d,data=peatdata,start=list(c=0.012,d=0.0035))
+peatfit_cumul <- gsl_nls(Core_C_density~a*(MIDDEPTH)^b,data=peatdata,start=list(a=0.3,b=1.03))
+detach(peatdata)
+summary(peatfit_cumul)
+summary(peatfit_inst)
+
+
+
 
 ```
 
