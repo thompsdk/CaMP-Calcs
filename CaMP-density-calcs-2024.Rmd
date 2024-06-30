@@ -12,7 +12,6 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(rpart)
 library(rpart.plot)
-
 library(car)
 library(lme4)
 #library(cars)
@@ -26,123 +25,10 @@ library(broom)
 
 ## Header 1
 
-```{r reg-tree-not-run, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
-##################################################
-#### simple regression tree for bulk density
-#### used in the Bauer et al 2024 national peat core composite
-##################################################
-
-####################################
-#### Load Data
-###########################
-
-PROFILES <- read.csv("~/CaMP-Calcs/PROFILES_March11_2021.csv")
-tree.for.model <- subset(PROFILES,DB_EST_TYPE == "BD_TREE_ORG" & MATERIAL_1 != "GAP.NSL")
-BD.training <- subset(PROFILES,DB_MEAS_EST == "MEAS")
-
-Zoltai <- read.csv("~/CaMP-Calcs/Zoltai.csv")
-
-
-#BD.training$MIDDEPTH <- BD.training$UPPER_SAMP_DEPTH+BD.training$SAMP_THICK/2
-
-BD.tree <- rpart(BULK_DENSITY~ASH + UPPER_SAMP_DEPTH + MATERIAL_1 + MIDDEPTH + CWCS_CLASS,data=BD.training)
-printcp(BD.tree)
-rpart.plot(BD.tree)
-BD.predict <- predict(BD.tree,newdata=tree.for.model)
-
-cor(x=tree.for.model$BULK_DENSITY,y=BD.predict,method="pearson")
-
-MAE <- mean(abs(tree.for.model$BULK_DENSITY-BD.predict))
-
-MAE/mean(tree.for.model$BULK_DENSITY)
-```
-
 ## Header 2
 
 
-```{r BD-modelling-old-not-run, eval=FALSE, include=FALSE}
-
-################################################################
-#### linear mixed-effects model for bulk density ##############
-################################################################
-
-### note this is using just the older Zoltai-only data, the newer Bauer et al 2024 national composite needs to be used now
-
-
-
-###note the slightly different header names in the 2024 document
-
-
-### some simple linear models just to baseline
-
-Zoltai.lm1 = lm(BD ~ log(MIDDEPTH)+CaMPTree+CaMPNutrient,data=Zoltai)
-summary.lm(Zoltai.lm1)
-
-Zoltai.lm2 = aov(BD ~ log(DEPTHCLASS)+CaMPTree+CaMPNutrient,data=Zoltai)
-Anova(Zoltai.lm2, type="III")
-summary.lm(Zoltai.lm2)
-
-
-Zoltai$PeatC_dens <- as.numeric(Zoltai$PeatC_dens)
-### null model
-BD.null = lmer(PeatC_dens ~ log(DEPTHCLASS)+(1|CONCAT),data=Zoltai,REML=FALSE)
-summary(BD.null)
-
-BD.model1 = lmer(PeatC_dens ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPTree,data=Zoltai,REML=FALSE)
-summary(BD.model1)
-anova(BD.null,BD.model1)
-
-### this is best model so far
-
-BD.model2a = lmer(PeatC_dens ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPTree+CaMPNutrient,data=Zoltai,REML=FALSE)
-
-### where PeatC_dens is the sample-measured (no model or interpolation) carbon density in g/cm3
-### DEPTHCLASS is a 15-cm depth class interval, corresponding to the mean sample thickness in the dataset
-### CONCAT is the concatenation of YEAR, SITE, and SUBSITE into a unique string for each core
-### CaMPClass 1 
-
-### note that the lmer is used here for completeness 
-
-
-
-#### #not run: try a version of the data with no swamps at all
-#BD.model2c = lmer(PeatC_dens ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPTree*CaMPNutrient,data=Zoltai_no_swamp,REML=FALSE)
-#summary(BD.model2c)
-
-
-BD.model2b = lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPTree)+(1|CONCAT)+CaMPNutrient+(1|YEAR),data=Zoltai,REML=FALSE)
-summary(BD.model2b)
-coef(BD.model2b)
-
-#### doesn't converge
-BD.model2c = lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+(1+log(DEPTHCLASS)|CaMPTree)+(1|YEAR),data=Zoltai,REML=FALSE)
-
-#### Go with this one now....  Same AIC as 2B above
-BD.model2 = lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+CaMPTree+(1|YEAR),data=Zoltai,REML=FALSE)
-
-
-BD.model2e = lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+CaMPTree+(1|YEAR)+ECOREGION,data=Zoltai,REML=FALSE)
-
-summary(BD.model2)
-#anova(BD.model2,BD.model2e)
-ranef(BD.model2)
-fixef(BD.model2)
-coef(BD.model2)
-
-### too much noise for interaction
-BD.model3 = lmer(BD ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPClass1*CaMPClass2,data=Zoltai,REML=FALSE)
-summary(BD.model3)
-anova(BD.model2,BD.model3)
-coef(BD.model3)
-
-### add in ecozone and MAT, no improvement
-BD.model4 = lmer(BD ~ log(DEPTHCLASS)+(1|CONCAT)+CaMPClass1+CaMPClass2+ECOPROV,data=Zoltai,REML=FALSE)
-summary(BD.model4)
-anova(BD.model2,BD.model4)
-```
-
-
-```{r BD-modelling-2024, echo=FALSE}
+```{r load-data, echo=FALSE}
 
 ################################################################
 #### linear mixed-effects model for bulk density ##############
@@ -181,9 +67,9 @@ CORESITES_2024$CWCS_CLASS <- as.factor(CORESITES_2024$CWCS_CLASS)
 CORESITES_2024$CWCS_FORM <- as.factor(CORESITES_2024$CWCS_FORM)
 CORESITES_2024$ECOZONE_NAME_EN <- as.factor(CORESITES_2024$ECOZONE_NAME_EN)
 
-levels(CORESITES_2024$CWCS_CLASS)
-levels(CORESITES_2024$FEN_TYPE)
-levels(CORESITES_2024$CWCS_FORM)
+#levels(CORESITES_2024$CWCS_CLASS)
+#levels(CORESITES_2024$FEN_TYPE)
+#levels(CORESITES_2024$CWCS_FORM)
 
 ### split into poor and rich fens
 CORESITES_2024$CaMPNutrient_2024 <- case_when(
@@ -209,8 +95,8 @@ CORESITES_2024 <- CORESITES_2024 %>% drop_na(CaMPNutrient_2024)
 
 CORESITES_2024$CaMPNutrient_2024 <- as.factor(CORESITES_2024$CaMPNutrient_2024)
 
-levels(CORESITES_2024$CaMPNutrient_2024)
-levels(CORESITES_2024$ECOZONE_NAME_EN)
+#levels(CORESITES_2024$CaMPNutrient_2024)
+#levels(CORESITES_2024$ECOZONE_NAME_EN)
 
 ### convert provided ecozone names into camel string for ease of analysis later on
 CORESITES_2024$ECOZONE_NAME_EN <- str_replace_all(CORESITES_2024$ECOZONE_NAME_EN, " ", "")
@@ -227,19 +113,6 @@ CORESITES_extract <- CORESITES_2024 %>% select(CORE_ID, PROV_TERR, ECOZONE_NAME_
 
 PROFILE_2024_w_site_info <- inner_join(PROFILES_2024,CORESITES_extract,by="CORE_ID") 
 
-##############################
-#### New 2024 peat core dataset including permafrost and potentially ecozone
-############################
-
-BD.model2b.2024 = lmer(PeatC_dens ~ log(DEPTHCLASS)+TREED+(1|CORE_ID)+CaMPNutrient_2024+ECOZONE_NAME_EN,data=PROFILE_2024_w_site_info,REML=FALSE)
-#summary(BD.model2b.2024)
-#coef(BD.model2b.2024)
-
-#not sure what summary stats to print out 
-
-#######################################
-### end BD model selection/exploration
-#######################################
 
 ```
 
@@ -247,57 +120,81 @@ BD.model2b.2024 = lmer(PeatC_dens ~ log(DEPTHCLASS)+TREED+(1|CORE_ID)+CaMPNutrie
 
 ### map a map of peat type with the ecozones overlain and provinces too
 
-```
-
-
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
-
-```{r LOO-calcs-archive-not-run, eval=FALSE, include=FALSE}
-
-
-
-##########################################################################################
-### leave one out (LOO) cross-validation and scatterplot of those results.  Use predict().
-### have not done for 2024 BD model yet
-#########################################################################################
-
-
-Zoltai[1,]
-
-n <- nrow(Zoltai)
-#i <- 10
-#data<-rbind(Zoltai[1:(i-1),],Zoltai[(i+1):n,])
-#nrow(Zoltai[(i+1):n,])
-Z <- array(0, c(5017,2))
-
-#Zoltai$PeatC_dens[i]
-
-### Leave-one-out cross validation, but don't ever use any data from the same subsite/core at all:
-for (i in 22:(n-22)){
-  BD.model.temp <- lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+CaMPTree,data=rbind(Zoltai[1:(i-20),],Zoltai[(i+20):(n-22),]),REML=FALSE)
-  Z[i,1] <- Zoltai$PeatC_dens[i]
-  Z[i,2] <- predict(BD.model.temp, newdata=Zoltai[i,])
-}
-
-for (i in 50:(n-20)){
-  BD.model.temp <- lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+CaMPTree,data=rbind(Zoltai[1:(i-20),],Zoltai[(i+20):(n-20),]),REML=FALSE)
-  Z[i,1] <- Zoltai$PeatC_dens[i]
-  Z[i,2] <- predict(BD.model.temp, newdata=Zoltai[i,], allow.new.levels=TRUE)
-}
-
-
-#levels(Zoltai$CaMPTree)
-plot(Z[,1],Z[,2])
-abline(0,1)
-
-library(ggplot2)
-
-
-###option to write out the outputs of the Linear Mixed Effect Model on a leave-one-out basis in order to assess the LME accuracy with a simple 1:1 biplot
-###write.csv(Z,"LME_pred_Vs_obs.csv")
+##Also overlay against Pontone peat map
 
 ```
+
+
+
+
+```{r summary-stats, echo=FALSE, message=FALSE, warning=FALSE}
+
+
+
+##############################################################################
+#### Misc summary stats
+#############################################################################
+
+### depth quantiles by ecozone
+
+#CORESITES_2024 %>%
+  # group_by(ECOZONE_NAME_EN) %>%
+  # summarise(ORG_DEPTH = median(ORG_DEPTH), n = n())
+
+
+### depth summary of ecozone and peat type
+CORESITES_2024 %>%
+   group_by(ECOZONE_NAME_EN,CaMPNutrient_2024) %>%
+   summarise(ORG_DEPTH = median(ORG_DEPTH), n = n())
+
+### depth summary of ecozone and peat type, Tree cover class and Province
+CORESITES_2024 %>%
+   group_by(ECOZONE_NAME_EN,CaMPNutrient_2024,TREED,PROV_TERR) %>%
+   summarise(ORG_DEPTH = median(ORG_DEPTH), n = n())
+
+CORESITES_2024  %>%
+   group_by(CaMPNutrient_2024,PERMAFROST)  %>%
+   summarise(ACTIVE_DPT = mean(ACTIVE_DPT,na.rm=TRUE), n = n(), MODAL_SMPL_MONTH = median(SAMPLING_MONTH,na.rm=TRUE))
+
+CORESITES_2024  %>%
+   filter(CWCS_CLASS == "fen" & PERMAFROST == "Y")  %>% group_by(ECOZONE_NAME_EN) %>%
+   summarise(n = n())
+
+
+CORESITES_2024  %>%
+   group_by(CWCS_FORM,PERMAFROST)  %>%
+   summarise(Mean_BD = mean(ORG_C_MGHA/ORG_DEPTH,na.rm=TRUE), n = n())
+
+
+###really, need to do a CaMPNutrient * Ecozone grid for sample size, then median org depth, then Mg/ha, so three tables
+
+### will have to do that manually and fill in a data frame that way in a loop, awkward but can't see any pre-baked functions otherwise.
+
+
+############################
+### end misc stats
+###########################
+
+
+```
+
+```{r BD-model-2024, echo=FALSE}
+
+##############################
+#### New 2024 peat core dataset including permafrost and potentially ecozone
+############################
+
+BD.model2b.2024 = lmer(PeatC_dens ~ log(DEPTHCLASS)+TREED+(1|CORE_ID)+CaMPNutrient_2024+ECOZONE_NAME_EN,data=PROFILE_2024_w_site_info,REML=FALSE)
+summary(BD.model2b.2024)
+#coef(BD.model2b.2024)
+
+#not sure what summary stats to print out 
+
+#######################################
+### end BD model selection/exploration
+#######################################
+```
+
 
 ```{r std-curve-fitting, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -391,10 +288,10 @@ Palette1 <- c("#0a4b32","#6a917b","#aad7bf","#5c5430","#aba476","#fbfabc","#7926
 ### down to 3m, using nutrient only
 
 ### single ecozone
-ggplot(subset(Peat_std_curves_long,ECOZONE_NAME_EN == "Taiga Plains"), aes(Core_C_density,MIDDEPTH, colour=CaMPNutrient_2024))+geom_smooth(size=1.5) + ylim(300,0) + xlim(0,250) + labs(x = "Core Carbon density kg m^-2", y = "Depth from surface (cm)") + labs(title="example Taiga Plains ecozone-specific density curves") #+ facet_grid(rows = vars(ECOZONE_NAME_EN))
+ggplot(subset(Peat_std_curves_long,ECOZONE_NAME_EN == "TaigaPlains"), aes(Core_C_density,MIDDEPTH, colour=CaMPNutrient_2024))+geom_smooth(size=1.5) + ylim(300,0) + xlim(0,250) + labs(x = "Core Carbon density kg m^-2", y = "Depth from surface (cm)") + labs(title="example Taiga Plains ecozone-specific density curves") #+ facet_grid(cols = vars(TREED))
 
 ###all ecozones in a facet
-ggplot(Peat_std_curves_long, aes(Core_C_density,MIDDEPTH, colour=CaMPNutrient_2024))+geom_smooth(size=1.5) + ylim(300,0) + xlim(0,250) + labs(x = "Core Carbon density kg m^-2", y = "Depth from surface (cm)") + facet_grid(rows = vars(ECOZONE_NAME_EN))
+ggplot(Peat_std_curves_long, aes(Core_C_density,MIDDEPTH, colour=CaMPNutrient_2024))+geom_smooth(size=1.5) + ylim(300,0) + xlim(0,250) + labs(x = "Core Carbon density kg m^-2", y = "Depth from surface (cm)") + facet_grid( vars(ECOZONE_NAME_EN),vars(CaMPNutrient_2024))
 
 
 
@@ -413,10 +310,6 @@ ggplot(Peat_std_curves_long, aes(Core_C_density,MIDDEPTH, colour=CaMPNutrient_20
 ```{r BD-curve-fitting, echo=FALSE, message=FALSE, warning=FALSE}
 
 
-
-
-
-
 Peat_std_curves_long <- Peat_std_curves_long %>% mutate(UniquePeatCombo = paste0(ECOZONE_NAME_EN,"-",CaMPNutrient_2024)) 
 
 UniquePeatComboList <- unique(PeatParamSpace$UniquePeatCombo)
@@ -429,7 +322,7 @@ fitted <- Peat_std_curves_long  %>%
   mutate(
      fit = map(data, ~ gsl_nls(Core_C_density~a*(MIDDEPTH)^b,start=list(a=0.3,b=1.03),data = .)),
   )
-fitted
+
 
 
 PeatDatabase_2024_BD_curve_fit <- fitted %>% 
@@ -438,86 +331,17 @@ PeatDatabase_2024_BD_curve_fit <- fitted %>%
 
 PeatDatabase_2024_BD_curve_fit <- PeatDatabase_2024_BD_curve_fit %>% select(UniquePeatCombo, term, estimate)
 
-
+PeatDatabase_2024_BD_curve_fit
 ##############################
 #### end curve fitting
 #############################
 
 
-## curve fitting as seen in the Bona et al 2020 paper: http://www.sciencedirect.com/science/article/pii/S0304380020302350
-## instantaneous C density: c*ln(depth from surface cm)-d
-
-
-## NB! need to change CaMPClass manually each time here, not looping throuht (but could for a more complete document)
-peatdata <- subset(Zoltai_std_curves_long, CaMPClass=="open poor fen")
-### !!
-
-
-
-
-attach(peatdata)
-peatfit_inst <- gsl_nls(PeatC_dens~c*log(MIDDEPTH)-d,data=peatdata,start=list(c=0.012,d=0.0035))
-peatfit_cumul <- gsl_nls(Core_C_density~a*(MIDDEPTH)^b,data=peatdata,start=list(a=0.3,b=1.03))
-detach(peatdata)
-summary(peatfit_cumul)
-summary(peatfit_inst)
-
-
 
 
 ```
 
-
-```{r summary-stats, echo=FALSE, message=FALSE, warning=FALSE}
-
-
-
-##############################################################################
-#### Misc summary stats
-#############################################################################
-
-### depth quantiles by ecozone
-
-#CORESITES_2024 %>%
-  # group_by(ECOZONE_NAME_EN) %>%
-  # summarise(ORG_DEPTH = median(ORG_DEPTH), n = n())
-
-
-### depth summary of ecozone and peat type
-CORESITES_2024 %>%
-   group_by(ECOZONE_NAME_EN,CaMPNutrient_2024) %>%
-   summarise(ORG_DEPTH = median(ORG_DEPTH), n = n())
-
-### depth summary of ecozone and peat type, Tree cover class and Province
-CORESITES_2024 %>%
-   group_by(ECOZONE_NAME_EN,CaMPNutrient_2024,TREED,PROV_TERR) %>%
-   summarise(ORG_DEPTH = median(ORG_DEPTH), n = n())
-
-CORESITES_2024  %>%
-   group_by(CaMPNutrient_2024,PERMAFROST)  %>%
-   summarise(ACTIVE_DPT = mean(ACTIVE_DPT,na.rm=TRUE), n = n(), MODAL_SMPL_MONTH = median(SAMPLING_MONTH,na.rm=TRUE))
-
-CORESITES_2024  %>%
-   filter(CWCS_CLASS == "fen" & PERMAFROST == "Y")  %>% group_by(ECOZONE_NAME_EN) %>%
-   summarise(n = n())
-
-
-CORESITES_2024  %>%
-   group_by(CWCS_FORM,PERMAFROST)  %>%
-   summarise(Mean_BD = mean(ORG_C_MGHA/ORG_DEPTH,na.rm=TRUE), n = n())
-
-
-###really, need to do a CaMPNutrient * Ecozone grid for sample size, then median org depth, then Mg/ha, so three tables
-
-### will have to do that manually and fill in a data frame that way in a loop, awkward but can't see any pre-baked functions otherwise.
-
-
-############################
-### end misc stats
-###########################
-
-
-```
+Below are two code chunks used for gap-filling bulk density in the Bauer et al 2024 national peat core composite:
 
 ```{r BD-CTOT-gap-filling-not-run, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 
@@ -638,4 +462,109 @@ median(C_OM$C_TOT_PCT/(100-C_OM$ASH))
 #[1] 0.5224408
 ```
 
+
+```{r reg-tree-not-run, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+##################################################
+#### simple regression tree for bulk density
+#### used in the Bauer et al 2024 national peat core composite
+##################################################
+
+####################################
+#### Load Data
+###########################
+
+PROFILES <- read.csv("~/CaMP-Calcs/PROFILES_March11_2021.csv")
+tree.for.model <- subset(PROFILES,DB_EST_TYPE == "BD_TREE_ORG" & MATERIAL_1 != "GAP.NSL")
+BD.training <- subset(PROFILES,DB_MEAS_EST == "MEAS")
+
+Zoltai <- read.csv("~/CaMP-Calcs/Zoltai.csv")
+
+
+#BD.training$MIDDEPTH <- BD.training$UPPER_SAMP_DEPTH+BD.training$SAMP_THICK/2
+
+BD.tree <- rpart(BULK_DENSITY~ASH + UPPER_SAMP_DEPTH + MATERIAL_1 + MIDDEPTH + CWCS_CLASS,data=BD.training)
+printcp(BD.tree)
+rpart.plot(BD.tree)
+BD.predict <- predict(BD.tree,newdata=tree.for.model)
+
+cor(x=tree.for.model$BULK_DENSITY,y=BD.predict,method="pearson")
+
+MAE <- mean(abs(tree.for.model$BULK_DENSITY-BD.predict))
+
+MAE/mean(tree.for.model$BULK_DENSITY)
+```
+
+
+```{r LOO-calcs-archive-not-run, eval=FALSE, include=FALSE}
+
+
+
+##########################################################################################
+### leave one out (LOO) cross-validation and scatterplot of those results.  Use predict().
+### have not done for 2024 BD model yet
+#########################################################################################
+
+
+Zoltai[1,]
+
+n <- nrow(Zoltai)
+#i <- 10
+#data<-rbind(Zoltai[1:(i-1),],Zoltai[(i+1):n,])
+#nrow(Zoltai[(i+1):n,])
+Z <- array(0, c(5017,2))
+
+#Zoltai$PeatC_dens[i]
+
+### Leave-one-out cross validation, but don't ever use any data from the same subsite/core at all:
+for (i in 22:(n-22)){
+  BD.model.temp <- lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+CaMPTree,data=rbind(Zoltai[1:(i-20),],Zoltai[(i+20):(n-22),]),REML=FALSE)
+  Z[i,1] <- Zoltai$PeatC_dens[i]
+  Z[i,2] <- predict(BD.model.temp, newdata=Zoltai[i,])
+}
+
+for (i in 50:(n-20)){
+  BD.model.temp <- lmer(PeatC_dens ~ (1+log(DEPTHCLASS)|CaMPNutrient)+(1|CONCAT)+CaMPTree,data=rbind(Zoltai[1:(i-20),],Zoltai[(i+20):(n-20),]),REML=FALSE)
+  Z[i,1] <- Zoltai$PeatC_dens[i]
+  Z[i,2] <- predict(BD.model.temp, newdata=Zoltai[i,], allow.new.levels=TRUE)
+}
+
+
+#levels(Zoltai$CaMPTree)
+plot(Z[,1],Z[,2])
+abline(0,1)
+
+library(ggplot2)
+
+
+###option to write out the outputs of the Linear Mixed Effect Model on a leave-one-out basis in order to assess the LME accuracy with a simple 1:1 biplot
+###write.csv(Z,"LME_pred_Vs_obs.csv")
+
+```
+
+
+And an archive of the bulk density modelling from Bona et al 2020:
+
+
+```{r old-curve-fit, eval=FALSE, include=FALSE}
+## curve fitting as seen in the Bona et al 2020 paper: http://www.sciencedirect.com/science/article/pii/S0304380020302350
+## instantaneous C density: c*ln(depth from surface cm)-d
+
+
+## NB! need to change CaMPClass manually each time here, not looping throuht (but could for a more complete document)
+peatdata <- subset(Zoltai_std_curves_long, CaMPClass=="open poor fen")
+### !!
+
+
+
+
+attach(peatdata)
+peatfit_inst <- gsl_nls(PeatC_dens~c*log(MIDDEPTH)-d,data=peatdata,start=list(c=0.012,d=0.0035))
+peatfit_cumul <- gsl_nls(Core_C_density~a*(MIDDEPTH)^b,data=peatdata,start=list(a=0.3,b=1.03))
+detach(peatdata)
+summary(peatfit_cumul)
+summary(peatfit_inst)
+
+
+
+```
 
