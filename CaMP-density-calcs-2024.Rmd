@@ -21,6 +21,7 @@ library(ggplot2)
 library(nls2)
 library(gslnls) # see https://www.openanalytics.eu/blog/2022/05/17/new-nonlinear-ls-solvers-in-r/ for use case in gslnls
 library(broom)
+library(sf)
 ```
 
 ## Header 1
@@ -118,9 +119,67 @@ PROFILE_2024_w_site_info <- inner_join(PROFILES_2024,CORESITES_extract,by="CORE_
 
 ```{r map}
 
+### borrowed from my CanGreenUp repo, just need to swap out "sites"
+
 ### map a map of peat type with the ecozones overlain and provinces too
 
 ##Also overlay against Pontone peat map
+
+
+
+
+
+#### queue up data for figure 1:
+### map of ecozones and plot locations using ggplot
+### https://www.r-spatial.org/r/2018/10/25/ggplot2-sf-2.html
+##gml link for ecozones is here:http://www.agr.gc.ca/atlas/data_donnees/bio/aafcEcostratification/gml/ECOZONE_V2_2_GML.zip
+###WFS for ecozones is here: http://ecozones.ca/english/services.html
+### using WFS in ggplot is here: https://inbo.github.io/tutorials/tutorials/spatial_wfs_services/
+
+##read ecozones map from local dir:
+ecozones_sf <- st_read("BIO_CA_TER_ECOZONE_V2_2.gml", quiet = TRUE)
+ecozones_sf3978 <- sf::st_transform(ecozones_sf, 3978)
+###add in a column with short-name of ecozones?
+### or sub out number with TSW etc
+### example here:https://stackoverflow.com/questions/63563285/extract-coordinates-of-polygon-centroids-and-label-them-by-polygon-number
+#(st_centroid(ecozones_sf3978))
+
+Canada <- ne_countries(scale = "medium", returnclass = "sf", country = "Canada")
+##also load big lakes in Canada
+
+###download option, but annoying loading message that's hard to suppress:
+#lakes50 <- ne_download(scale = 50, type = 'lakes', category = 'physical', returnclass = "sf")
+###use local copy: 
+lakes50 <- st_read("ne_50m_lakes.gml", quiet = TRUE)
+st_crs(lakes50) <- 4326
+### convert this to gml and keep in github repo
+### permalink?: https://github.com/nvkelso/natural-earth-vector/blob/master/50m_physical/ne_50m_lakes.shp
+
+ecozones_used <- st_read("ecozones_used_3978.gml",quiet=TRUE)
+st_crs(ecozones_used) <- 3978
+st_crs(Canada) <- 4326
+
+### this is buggy - why??? lakes50 is WGS84
+lakes50_crop <- st_intersection(lakes50, Canada)
+
+lakesCanada_3978 <- sf::st_transform(lakes50_crop, 3978)
+Canada_3978 <- sf::st_transform(Canada, 3978)
+ecozones_sf_crop <- st_intersection(ecozones_sf3978, Canada_3978)
+
+sites_sf <- st_as_sf(decid_site , coords = c("xcoord", "ycoord"), 
+    crs = 3978, agr = "constant")
+
+```
+
+```{r Fig1-sitesmap-by-ecozone, echo=FALSE, fig.cap=paste("Locations of NDVI time series data plots."), message=FALSE, warning=FALSE}
+
+
+ecozones_colours <- c("#a6cee3","#1f78b4","#fb9a99","#33a02c","#b2df8a","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928","#7d8b8f", "#c1c1c1")
+
+ggplot(data = Canada_3978) +
+    geom_sf(colour="black")+ theme_bw()+geom_sf(data=ecozones_used,aes(fill=factor(ECOZONE))) + geom_sf(data = lakesCanada_3978,colour="black",fill="white") + geom_sf(data = sites_sf, size = 2, shape = 19) + theme(legend.position = "none") + geom_sf_label(data=ecozones_used,nudge_y = c(0,0,0,0,250000,0,0,-100000,0,0,+100000),size=2.5,label.padding = unit(0.15, "lines"),aes(label = factor(ECOZONE))) + scale_fill_manual(values=ecozones_colours)+ylab("")+xlab("")# + ggrepel::geom_label_repel(data=ecozones_used, aes(label = ECOZONE, geometry = geometry), stat = "sf_coordinates", min.segment.length = 0,label.size = NA) 
+```
+
 
 ```
 
@@ -152,18 +211,20 @@ CORESITES_2024 %>%
    group_by(ECOZONE_NAME_EN,CaMPNutrient_2024,TREED,PROV_TERR) %>%
    summarise(ORG_DEPTH = median(ORG_DEPTH), n = n())
 
-CORESITES_2024  %>%
-   group_by(CaMPNutrient_2024,PERMAFROST)  %>%
-   summarise(ACTIVE_DPT = mean(ACTIVE_DPT,na.rm=TRUE), n = n(), MODAL_SMPL_MONTH = median(SAMPLING_MONTH,na.rm=TRUE))
+#bonus analysis from June 2024 re: permafrost fens, not needed to be repeated here
 
-CORESITES_2024  %>%
-   filter(CWCS_CLASS == "fen" & PERMAFROST == "Y")  %>% group_by(ECOZONE_NAME_EN) %>%
-   summarise(n = n())
+#CORESITES_2024  %>%
+   #group_by(CaMPNutrient_2024,PERMAFROST)  %>%
+   #summarise(ACTIVE_DPT = mean(ACTIVE_DPT,na.rm=TRUE), n = n(), MODAL_SMPL_MONTH = median(SAMPLING_MONTH,na.rm=TRUE))
+
+#CORESITES_2024  %>%
+   #filter(CWCS_CLASS == "fen" & PERMAFROST == "Y")  %>% group_by(ECOZONE_NAME_EN) %>%
+   #summarise(n = n())
 
 
-CORESITES_2024  %>%
-   group_by(CWCS_FORM,PERMAFROST)  %>%
-   summarise(Mean_BD = mean(ORG_C_MGHA/ORG_DEPTH,na.rm=TRUE), n = n())
+#CORESITES_2024  %>%
+ #  group_by(CWCS_FORM,PERMAFROST)  %>%
+  # summarise(Mean_BD = mean(ORG_C_MGHA/ORG_DEPTH,na.rm=TRUE), n = n())
 
 
 ###really, need to do a CaMPNutrient * Ecozone grid for sample size, then median org depth, then Mg/ha, so three tables
