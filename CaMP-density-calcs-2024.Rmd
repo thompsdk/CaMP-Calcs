@@ -397,7 +397,7 @@ PeatDatabase_2024_BD_curve_fit
 #### end curve fitting
 #############################
 
-
+write.csv(PeatDatabase_2024_BD_curve_fit,"PeatDatabase_2024_BD_curve_fit.csv")
 
 
 ```

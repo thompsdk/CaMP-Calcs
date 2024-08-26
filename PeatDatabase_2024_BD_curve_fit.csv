@@ -1,0 +1,73 @@
+"","UniquePeatCombo","term","estimate"
+"1","ArcticCordillera-permafrost","a",0.378063286019234
+"2","ArcticCordillera-permafrost","b",1.05581907089761
+"3","AtlanticMaritime-bog","a",0.280730501051327
+"4","AtlanticMaritime-bog","b",1.07815520738537
+"5","AtlanticMaritime-rich fen","a",0.346622679368981
+"6","AtlanticMaritime-rich fen","b",1.06207259330741
+"7","AtlanticMaritime-swamp","a",0.390699826757256
+"8","AtlanticMaritime-swamp","b",1.05350785378404
+"9","BorealCordillera-permafrost","a",0.258620330462685
+"10","BorealCordillera-permafrost","b",1.08475080285107
+"11","BorealPlains-bog","a",0.364817178990567
+"12","BorealPlains-bog","b",1.0583615548342
+"13","BorealPlains-permafrost","a",0.383191996180132
+"14","BorealPlains-permafrost","b",1.05486806927402
+"15","BorealPlains-poor fen","a",0.387080253122454
+"16","BorealPlains-poor fen","b",1.05415896818538
+"17","BorealPlains-rich fen","a",0.427131066279912
+"18","BorealPlains-rich fen","b",1.04739849200836
+"19","BorealPlains-swamp","a",0.487835004403819
+"20","BorealPlains-swamp","b",1.03872106889212
+"21","BorealShield-bog","a",0.373594369892436
+"22","BorealShield-bog","b",1.05666266611711
+"23","BorealShield-permafrost","a",0.392024313737901
+"24","BorealShield-permafrost","b",1.05327172378704
+"25","BorealShield-poor fen","a",0.39592366227763
+"26","BorealShield-poor fen","b",1.05258305566203
+"27","BorealShield-rich fen","a",0.441877495859735
+"28","BorealShield-rich fen","b",1.04513323050117
+"29","BorealShield-swamp","a",0.499544306713723
+"30","BorealShield-swamp","b",1.03722629596099
+"31","HudsonPlains-bog","a",0.338251619843591
+"32","HudsonPlains-bog","b",1.06387247704616
+"33","HudsonPlains-permafrost","a",0.362102415795157
+"34","HudsonPlains-permafrost","b",1.05889866745331
+"35","HudsonPlains-poor fen","a",0.343373821141674
+"36","HudsonPlains-poor fen","b",1.06276389460327
+"37","HudsonPlains-rich fen","a",0.400007015370177
+"38","HudsonPlains-rich fen","b",1.05187212072396
+"39","MixedwoodPlains-bog","a",0.466296493331208
+"40","MixedwoodPlains-bog","b",1.04161204172398
+"41","MixedwoodPlains-rich fen","a",0.527593038621003
+"42","MixedwoodPlains-rich fen","b",1.03384584759909
+"43","MontaneCordillera-rich fen","a",0.412380666963516
+"44","MontaneCordillera-rich fen","b",1.04977928984289
+"45","NorthernArctic-permafrost","a",0.49523187473814
+"46","NorthernArctic-permafrost","b",1.03777079291571
+"47","PacificMaritime-bog","a",0.502067698688996
+"48","PacificMaritime-bog","b",1.03691086797276
+"49","PacificMaritime-rich fen","a",0.557222882877431
+"50","PacificMaritime-rich fen","b",1.03055144076859
+"51","Prairies-permafrost","a",0.395243111335136
+"52","Prairies-permafrost","b",1.05270255510022
+"53","Prairies-rich fen","a",0.427155524600739
+"54","Prairies-rich fen","b",1.04739464250419
+"55","SouthernArctic-permafrost","a",0.409495276638521
+"56","SouthernArctic-permafrost","b",1.05025925524196
+"57","TaigaCordillera-permafrost","a",0.357799366157373
+"58","TaigaCordillera-permafrost","b",1.05976167044447
+"59","TaigaPlains-bog","a",0.373884120861361
+"60","TaigaPlains-bog","b",1.05660754011678
+"61","TaigaPlains-permafrost","a",0.398639060823424
+"62","TaigaPlains-permafrost","b",1.05210913839493
+"63","TaigaPlains-poor fen","a",0.390491609919139
+"64","TaigaPlains-poor fen","b",1.05354507736263
+"65","TaigaPlains-rich fen","a",0.433778269363291
+"66","TaigaPlains-rich fen","b",1.04636370380106
+"67","TaigaShield-bog","a",0.459240627767218
+"68","TaigaShield-bog","b",1.04260162519653
+"69","TaigaShield-permafrost","a",0.478111641203889
+"70","TaigaShield-permafrost","b",1.0400026981794
+"71","TaigaShield-poor fen","a",0.467174371395321
+"72","TaigaShield-poor fen","b",1.0414904371293
