@@ -1,5 +1,5 @@
 ---
-title: "Canadia Model for Peatlands Bulk Density Modelling - 2024"
+title: "Canadian Model for Peatlands Bulk Density Modelling - 2024"
 author: "Dan Thompson"
 date: "`r Sys.Date()`"
 output: pdf_document
@@ -17,6 +17,8 @@ library(lme4)
 #library(cars)
 library(dplyr)
 library(tidyverse)
+library(rnaturalearth)
+library(rnaturalearthdata)
 library(ggplot2)
 library(nls2)
 library(gslnls) # see https://www.openanalytics.eu/blog/2022/05/17/new-nonlinear-ls-solvers-in-r/ for use case in gslnls
@@ -27,7 +29,6 @@ library(sf)
 ## Header 1
 
 ## Header 2
-
 
 ```{r load-data, echo=FALSE}
 
@@ -117,7 +118,7 @@ PROFILE_2024_w_site_info <- inner_join(PROFILES_2024,CORESITES_extract,by="CORE_
 
 ```
 
-```{r map}
+```{r map, echo=FALSE}
 
 ### borrowed from my CanGreenUp repo, just need to swap out "sites"
 
@@ -166,8 +167,8 @@ lakesCanada_3978 <- sf::st_transform(lakes50_crop, 3978)
 Canada_3978 <- sf::st_transform(Canada, 3978)
 ecozones_sf_crop <- st_intersection(ecozones_sf3978, Canada_3978)
 
-sites_sf <- st_as_sf(decid_site , coords = c("xcoord", "ycoord"), 
-    crs = 3978, agr = "constant")
+sites_sf <- st_as_sf(CORESITES_2024 , coords = c("LONGITUDE", "LATITUDE"), 
+    crs = 4326, agr = "constant")
 
 ```
 
@@ -176,15 +177,13 @@ sites_sf <- st_as_sf(decid_site , coords = c("xcoord", "ycoord"),
 
 ecozones_colours <- c("#a6cee3","#1f78b4","#fb9a99","#33a02c","#b2df8a","#e31a1c","#fdbf6f","#ff7f00","#cab2d6","#6a3d9a","#ffff99","#b15928","#7d8b8f", "#c1c1c1")
 
+#ggplot()+ theme_bw()+geom_sf(data=ecozones_used,aes(fill=factor(ECOZONE))) + geom_sf(data = lakesCanada_3978,colour="black",fill="white") + geom_sf(data = sites_sf, size = 2, shape = 19) + theme(legend.position = "none") + geom_sf_label(data=ecozones_used,nudge_y = c(0,0,0,0,250000,0,0,-100000,0,0,+100000),size=2.5,label.padding = unit(0.15, "lines"),aes(label = factor(ECOZONE))) + scale_fill_manual(values=ecozones_colours)+ylab("")+xlab("")# + ggrepel::geom_label_repel(data=ecozones_used, aes(label = ECOZONE, geometry = geometry), stat = "sf_coordinates", min.segment.length = 0,label.size = NA) 
+
+
+
 ggplot(data = Canada_3978) +
     geom_sf(colour="black")+ theme_bw()+geom_sf(data=ecozones_used,aes(fill=factor(ECOZONE))) + geom_sf(data = lakesCanada_3978,colour="black",fill="white") + geom_sf(data = sites_sf, size = 2, shape = 19) + theme(legend.position = "none") + geom_sf_label(data=ecozones_used,nudge_y = c(0,0,0,0,250000,0,0,-100000,0,0,+100000),size=2.5,label.padding = unit(0.15, "lines"),aes(label = factor(ECOZONE))) + scale_fill_manual(values=ecozones_colours)+ylab("")+xlab("")# + ggrepel::geom_label_repel(data=ecozones_used, aes(label = ECOZONE, geometry = geometry), stat = "sf_coordinates", min.segment.length = 0,label.size = NA) 
 ```
-
-
-```
-
-
-
 
 ```{r summary-stats, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -255,7 +254,6 @@ summary(BD.model2b.2024)
 ### end BD model selection/exploration
 #######################################
 ```
-
 
 ```{r std-curve-fitting, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -366,7 +364,6 @@ ggplot(Peat_std_curves_long, aes(Core_C_density,MIDDEPTH, colour=CaMPNutrient_20
 
 
 ```
-
 
 ```{r BD-curve-fitting, echo=FALSE, message=FALSE, warning=FALSE}
 
@@ -523,7 +520,6 @@ median(C_OM$C_TOT_PCT/(100-C_OM$ASH))
 #[1] 0.5224408
 ```
 
-
 ```{r reg-tree-not-run, eval=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 ##################################################
 #### simple regression tree for bulk density
@@ -554,7 +550,6 @@ MAE <- mean(abs(tree.for.model$BULK_DENSITY-BD.predict))
 
 MAE/mean(tree.for.model$BULK_DENSITY)
 ```
-
 
 ```{r LOO-calcs-archive-not-run, eval=FALSE, include=FALSE}
 
@@ -602,9 +597,7 @@ library(ggplot2)
 
 ```
 
-
 And an archive of the bulk density modelling from Bona et al 2020:
-
 
 ```{r old-curve-fit, eval=FALSE, include=FALSE}
 ## curve fitting as seen in the Bona et al 2020 paper: http://www.sciencedirect.com/science/article/pii/S0304380020302350
@@ -628,4 +621,3 @@ summary(peatfit_inst)
 
 
 ```
-
